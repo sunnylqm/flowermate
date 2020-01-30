@@ -19,7 +19,7 @@ async function request(
   const additionalHeader = (options.method === 'POST' ||
     options.method === 'PUT') && {
     Accept: 'application/json',
-    'Content-Type':'application/json',
+    'Content-Type': options.body instanceof FormData ? 'multipart/form-data' : 'application/json',
   };
   const resp = await Promise.race<Response | undefined>([
     fetch(apiEndpoint + url, {
@@ -66,5 +66,13 @@ export function post(url: string, body: object, options: RequestOptions = {}) {
     ...options,
     body: body instanceof FormData ? body : JSON.stringify(body),
     method: 'POST',
+  });
+}
+
+export function put(url: string, body: object, options: RequestOptions = {}) {
+  return request(url, {
+    ...options,
+    body: body instanceof FormData ? body : JSON.stringify(body),
+    method: 'PUT',
   });
 }

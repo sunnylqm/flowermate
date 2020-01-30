@@ -13,7 +13,7 @@ import { getUserAvatar } from 'utils/constants';
 import ActionSheet from 'react-native-action-sheet';
 import pickImage from 'utils/pickImage';
 import { showLoadingModal, closeLoadingModal } from 'components/Dialog';
-import { post } from 'utils/request';
+import { post, put } from 'utils/request';
 import { selectUser } from 'reduxState/selectors';
 import { User } from 'types/types';
 
@@ -51,7 +51,7 @@ function ProfileScreen({}: Props) {
             formData,
           );
           if (fileId) {
-            const { ok } = await post(`/user`, {
+            const { ok } = await put(`/user`, {
               id: user.id,
               avatar: fileId,
             });
