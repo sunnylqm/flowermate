@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
   SafeAreaView,
   FlatList,
 } from 'react-native';
@@ -24,17 +23,19 @@ function ReportListScreen({}: Props) {
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<string | null>(null);
   const isEndReached = React.useRef(false);
+  const isFetching = React.useRef(false);
   useEffect(() => {
     getListData();
   }, []);
   async function getListData(isRefresh?: boolean) {
-    if (loading) {
+    if (isFetching.current) {
       return;
     }
     if (!isRefresh && isEndReached.current) {
       return;
     }
-    await setLoading(isRefresh ? 'refresh' : 'more');
+    isFetching.current = true;
+    setLoading(isRefresh ? 'refresh' : 'more');
     const { data } = await get(
       `/report?${qs.stringify({ offset: isRefresh ? 0 : offset, limit })}`,
     );
@@ -53,9 +54,10 @@ function ReportListScreen({}: Props) {
         isEndReached.current = false;
       }
     }
+    isFetching.current = false;
   }
   function renderItem({ item, index }: { item: Report; index: number }) {
-    const { images, createdAt, desc, extra } = item;
+    const { image, createdAt, desc, extra } = item;
     return (
       <View style={styles.listRow}>
         <Text style={styles.timestamp}>
@@ -64,13 +66,10 @@ function ReportListScreen({}: Props) {
         <View>
           {!!desc && <Text style={styles.desc}>{desc}</Text>}
           <View style={styles.imagesContainer}>
-            {images.map((imageUri, i) => (
-              <ZoomImage
-                key={i}
-                source={{ uri: getImageUrl(imageUri) }}
-                style={styles.image}
-              />
-            ))}
+            <ZoomImage
+              source={{ uri: getImageUrl(image) }}
+              style={styles.image}
+            />
           </View>
           <View style={styles.metaTextContainer}>
             <Text

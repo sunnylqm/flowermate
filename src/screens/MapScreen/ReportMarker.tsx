@@ -9,7 +9,7 @@ import dayjs from 'dayjs';
 
 export default function ReportMarker({ report }: { report: Report }) {
   const markerRef = React.useRef<Marker>();
-  const imageUri = { uri: getImageUrl(report.images[0]) };
+  const imageUri = { uri: getImageUrl(report.image) };
   function showReportDetail() {
     const { name, baike_info } = report.extra!;
 

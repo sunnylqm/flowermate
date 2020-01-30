@@ -45,7 +45,7 @@ async function recognizeImage(lon: number, lat: number) {
     } = await post(`/report`, {
       type: 'plant',
       desc: '',
-      images: [fileId],
+      image: fileId,
       lon,
       lat,
     });
