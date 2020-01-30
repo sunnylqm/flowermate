@@ -47,12 +47,11 @@ function ProfileScreen({}: Props) {
           });
           showLoadingModal('正在上传...');
           const { data: fileId } = await post(
-            `/file?tag=avatar`,
+            `/file`,
             formData,
           );
           if (fileId) {
-            const { ok } = await put(`/user`, {
-              id: user.id,
+            const { ok } = await put(`/user/${user.id}`, {
               avatar: fileId,
             });
             if (ok) {

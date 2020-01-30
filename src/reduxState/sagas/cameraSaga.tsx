@@ -29,7 +29,7 @@ async function recognizeImage(lon: number, lat: number) {
     name: `file.jpg`,
   });
   showLoadingModal('正在上传...');
-  const { ok, data: fileId } = await post('/file?tag=plant', formData, {
+  const { ok, data: fileId } = await post('/file', formData, {
     timeout: 30000,
   });
   closeLoadingModal();

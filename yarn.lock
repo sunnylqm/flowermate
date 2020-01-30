@@ -5883,10 +5883,10 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native-webview@^8.0.5:
-  version "8.0.5"
-  resolved "https://registry.npm.taobao.org/react-native-webview/download/react-native-webview-8.0.5.tgz#f160d999618bd7c72fdcf5bd291c5366b2ca0aca"
-  integrity sha1-8WDZmWGL18cv3PW9KRxTZrLKCso=
+react-native-webview@^8.0.6:
+  version "8.0.6"
+  resolved "https://registry.npm.taobao.org/react-native-webview/download/react-native-webview-8.0.6.tgz#247e6e16926e06105144bb33ec9d0429e01c8900"
+  integrity sha1-JH5uFpJuBhBRRLsz7J0EKeAciQA=
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"

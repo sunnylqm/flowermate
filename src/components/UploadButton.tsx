@@ -28,7 +28,7 @@ export default function UploadButton({ tag, style, onUpload, onUploadFinished }:
     });
     setUploading(true);
     onUpload();
-    const { data: fileId } = await post(`/file?tag=upload_${tag}`, formData);
+    const { data: fileId } = await post(`/file`, formData);
     setUploading(false);
     onUploadFinished({
       fileId,
