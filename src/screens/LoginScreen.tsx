@@ -44,7 +44,7 @@ const LoginScreen = ({}: Props) => {
     navigate('RegisterScreen');
   }
   return (
-    <ImageBackground style={styles.bg} source={{ uri: 'launch_image' }}>
+    <ImageBackground style={styles.bg} source={{ uri: 'launch_screen' }}>
       <StatusBar barStyle="light-content" />
       <ScrollView
         keyboardShouldPersistTaps="handled"
