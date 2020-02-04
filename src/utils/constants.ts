@@ -5,7 +5,7 @@ import { Dimensions } from 'react-native';
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 export { screenHeight, screenWidth };
 
-// export const host = __DEV__ ? 'http://localhost:7001' : 'http://139.9.155.96';
+// export const host = __DEV__ ? 'http://localhost:7001' : 'http://118.24.22.67:9999';
 export const host = 'http://118.24.22.67:9999';
 export const apiEndpoint = `${host}/api`;
 

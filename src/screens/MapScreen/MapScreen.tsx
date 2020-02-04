@@ -15,7 +15,6 @@ import { MapView } from 'react-native-amap3d';
 import actions from 'reduxState/actions';
 import qs from 'qs';
 import ReportMarker from './ReportMarker';
-import { mapRef } from 'utils/mapService';
 import _ from 'lodash';
 import { screenWidth } from 'utils/constants';
 
@@ -72,7 +71,6 @@ export default function MapScreen({}: Props) {
   return (
     <View style={styles.container}>
       <MapView
-        ref={mapRef}
         style={styles.container}
         mapType="satellite"
         // showsCompass={false}

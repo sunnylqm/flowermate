@@ -1,5 +1,5 @@
 import React from 'react';
-import { select, takeLatest, call } from 'redux-saga/effects';
+import { select, takeEvery, call } from 'redux-saga/effects';
 import actions from 'reduxState/actions';
 import { post } from 'utils/request';
 import { Alert, Text } from 'react-native';
@@ -9,7 +9,7 @@ import { Location } from 'types/types';
 import pickImage from 'utils/pickImage';
 
 export function* watchShowCameraOptions() {
-  yield takeLatest(actions.showCameraOptions, showCameraOptions);
+  yield takeEvery(actions.showCameraOptions, showCameraOptions);
 }
 
 function* showCameraOptions() {
