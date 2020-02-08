@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { navigationRef } from 'utils/navigationService';
 import MainStackNavigator from './MainStackNavigator';
 import AuthStackNavigator from './AuthStackNavigator';
@@ -11,13 +11,13 @@ function RootScreen() {
   const token = useSelector(selectToken);
   React.useEffect(() => SplashScreen.hide(), []);
   return (
-    <NavigationNativeContainer ref={navigationRef}>
+    <NavigationContainer ref={navigationRef}>
       {token ? (
         <MainStackNavigator />
       ) : (
         <AuthStackNavigator />
       )}
-    </NavigationNativeContainer>
+    </NavigationContainer>
   );
 }
 

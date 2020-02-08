@@ -67,7 +67,7 @@ export interface ReportResult {
   user?: User;
 }
 
-export type ReportType = 'plant' | 'animal';
+export type ReportType = 'plant';
 export interface Report extends WithTimeStamp {
   id: string;
   image: number;
