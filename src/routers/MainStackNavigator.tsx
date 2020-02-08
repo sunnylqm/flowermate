@@ -11,7 +11,7 @@ export type MainStackParamList = {
   ReportListScreen: undefined;
   PostFeedScreen: undefined;
   FeedListScreen: { title: string; showMyself?: boolean };
-  WebScreen: { uri: string };
+  WebScreen: { title: string; uri: string };
 };
 
 const { Navigator, Screen } = createStackNavigator<MainStackParamList>();
@@ -51,7 +51,16 @@ export default function MainStackNavigator() {
           title: '我的动态',
         }}
       />
-      <Screen name="WebScreen" component={WebScreen} options={{ title: '' }} />
+      <Screen
+        name="WebScreen"
+        component={WebScreen}
+        options={({ route }) => ({
+          title: route.params.title || '',
+          headerTitleContainerStyle: {
+            marginHorizontal: 80,
+          },
+        })}
+      />
     </Navigator>
   );
 }
