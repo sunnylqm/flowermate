@@ -4,6 +4,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from 'reduxState/sagas/rootSaga';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -29,8 +30,9 @@ const persistedReducer = persistReducer(
 );
 export const ReduxStore = createStore(
   persistedReducer,
-  applyMiddleware(sagaMiddleware)
+  composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
+
 export const persistor = persistStore(ReduxStore);
 
 sagaMiddleware.run(rootSaga);
