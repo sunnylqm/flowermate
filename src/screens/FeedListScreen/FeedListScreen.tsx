@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
-import { ScreensParamList } from 'types/types';
+import { ScreensParamList, Feed } from 'types/types';
 import { get } from 'utils/request';
 import qs from 'qs';
-import { Report } from 'types/types';
 import FeedItem from './FeedItem';
 import { RouteProp, useRoute, useIsFocused } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
@@ -66,7 +65,7 @@ function FeedListScreen({}: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList<Report>
+      <FlatList<Feed>
         data={listData}
         refreshing={loading === 'refresh'}
         onRefresh={() => getListData(true)}
