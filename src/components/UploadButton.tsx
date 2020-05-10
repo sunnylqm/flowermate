@@ -10,7 +10,7 @@ interface UploadButtonProps {
   onUpload(): void;
   onUploadFinished({ fileId, localUri }: { fileId: number; localUri: string }): void;
 }
-export default function UploadButton({ tag, style, onUpload, onUploadFinished }: UploadButtonProps) {
+export default function UploadButton({ style, onUpload, onUploadFinished }: UploadButtonProps) {
   const [uploading, setUploading] = React.useState(false);
   async function uploadImage() {
     if (uploading) {

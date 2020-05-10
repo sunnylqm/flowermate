@@ -11,7 +11,7 @@ export type MainStackParamList = {
   ReportListScreen: undefined;
   PostFeedScreen: undefined;
   FeedListScreen: { title: string; showMyself?: boolean };
-  WebScreen: { title: string; uri: string };
+  WebScreen: { title?: string; uri: string };
 };
 
 const { Navigator, Screen } = createStackNavigator<MainStackParamList>();
