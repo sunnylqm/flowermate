@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { ReduxStore, persistor } from 'reduxState/store';
 import RootScreen from './RootScreen';
 import { PersistGate } from 'redux-persist/es/integration/react';
+import { RootSiblingParent } from 'react-native-root-siblings';
 
 export default function App() {
   const [permissionsGranted, setPermissionsGranted] = React.useState(false);
@@ -15,9 +16,9 @@ export default function App() {
         PermissionsAndroid.PERMISSIONS.CAMERA,
       ];
       if (Platform.OS === 'android') {
-        PermissionsAndroid.requestMultiple(PERMISSIONS).then(results => {
+        PermissionsAndroid.requestMultiple(PERMISSIONS).then((results) => {
           const allPermissionsGranted = Object.values(results).every(
-            result => result === 'granted',
+            (result) => result === 'granted',
           );
           if (allPermissionsGranted) {
             setPermissionsGranted(true);
@@ -39,7 +40,9 @@ export default function App() {
     <Provider store={ReduxStore}>
       <StatusBar translucent={true} backgroundColor="transparent" />
       <PersistGate loading={null} persistor={persistor}>
-        <RootScreen />
+        <RootSiblingParent>
+          <RootScreen />
+        </RootSiblingParent>
       </PersistGate>
     </Provider>
   );
