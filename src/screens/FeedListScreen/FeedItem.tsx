@@ -13,10 +13,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 interface Props {
   item: Feed;
   user: User;
-  chosen?: boolean;
 }
 
-function FeedItem({ item, user, chosen }: Props) {
+function FeedItem({ item, user }: Props) {
   const { images, createdAt, desc, user: author } = item;
   const fromNow = dayjs(createdAt).fromNow();
 
@@ -25,13 +24,13 @@ function FeedItem({ item, user, chosen }: Props) {
   );
   const likedByMe = feedLikes.includes(user.id);
   async function likeFeed(feedId: string) {
-    const { ok } = await post(`/feedlike`, {
+    const { ok } = await post('/feedlike', {
       feedId,
       action: likedByMe ? 'unlike' : 'like',
     });
     if (ok) {
       if (likedByMe) {
-        setFeedLikes(feedLikes.filter(userId => userId != user.id));
+        setFeedLikes(feedLikes.filter((userId) => userId != user.id));
       } else {
         setFeedLikes(feedLikes.concat(user.id));
       }
@@ -59,8 +58,8 @@ function FeedItem({ item, user, chosen }: Props) {
             onPress={() => likeFeed(item.id)}
           >
             <Icon
-              style={[styles.likeIcon, chosen && styles.activeLikeIcon]}
-              name={chosen ? 'heart' : 'heart-o'}
+              style={[styles.likeIcon, likedByMe && styles.activeLikeIcon]}
+              name={likedByMe ? 'heart' : 'heart-o'}
             />
             <Text style={styles.metaText}>{feedLikes.length || ''}</Text>
           </TouchableOpacity>

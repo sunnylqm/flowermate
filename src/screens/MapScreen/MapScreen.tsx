@@ -42,7 +42,7 @@ export default function MapScreen({}: Props) {
   }
 
   const updateLocation = _.throttle(
-    latLon => dispatch(actions.setLocation(latLon)),
+    (latLon) => dispatch(actions.setLocation(latLon)),
     5000,
   );
   // @ts-ignore
@@ -63,7 +63,7 @@ export default function MapScreen({}: Props) {
       longitude: number;
       latitudeDelta: number;
       longitudeDelta: number;
-    }
+    };
   }) {
     checkReportsByLocation({ lon, lat, lonDelta, latDelta });
   }
@@ -80,7 +80,7 @@ export default function MapScreen({}: Props) {
         onLocation={onLocation}
         onStatusChangeComplete={onStatusChangeComplete}
       >
-        {Object.keys(reportsMap).map(reportId => (
+        {Object.keys(reportsMap).map((reportId) => (
           <ReportMarker key={reportId} report={reportsMap[reportId]} />
         ))}
       </MapView>

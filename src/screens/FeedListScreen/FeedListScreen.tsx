@@ -25,7 +25,6 @@ function FeedListScreen({}: Props) {
   const [listData, setListData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<'refresh' | 'more' | null>(null);
-  const [chosenItemId, setChosenItemId] = useState<number | null>(null);
   const isEndReached = React.useRef(false);
   const isFetching = React.useRef(false);
   const isFocused = useIsFocused();
