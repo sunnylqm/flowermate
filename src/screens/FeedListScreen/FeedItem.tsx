@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   authorAvatar: {
-    width: 30,
-    height: 30,
+    width: 32,
+    height: 32,
     marginRight: 10,
   },
   authorName: {
