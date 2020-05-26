@@ -101,9 +101,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 10,
   },
-  currentOrg: {
-    marginBottom: 10,
-  },
   imagesContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',

@@ -14,7 +14,7 @@ export const reducer = combineReducers({
     {
       key: 'dataState',
       storage: AsyncStorage,
-      blacklist: ['currentOrg', 'location', 'mapLocation'],
+      blacklist: ['location', 'mapLocation'],
     },
     reducers.dataStateReducer,
   ),

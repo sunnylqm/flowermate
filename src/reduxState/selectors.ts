@@ -5,15 +5,15 @@ export const selectDataState = (reduxState: ReduxState) => reduxState.dataState;
 
 export const selectUser = createSelector(
   selectDataState,
-  dataState => dataState.user,
+  (dataState) => dataState.user,
 );
 
 export const selectToken = createSelector(
   selectDataState,
-  dataState => dataState.token,
+  (dataState) => dataState.token,
 );
 
 export const selectLocation = createSelector(
   selectDataState,
-  dataState => dataState.location,
+  (dataState) => dataState.location,
 );
