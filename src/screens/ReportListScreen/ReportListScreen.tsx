@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  SafeAreaView,
-  FlatList,
-} from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, FlatList } from 'react-native';
 import { navigate } from 'utils/navigationService';
 import { get } from 'utils/request';
 import qs from 'qs';
@@ -20,12 +14,12 @@ interface Props {}
 
 function ReportListScreen({}: Props) {
   const [listData, setListData] = useState([]);
-  const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<string | null>(null);
   const isEndReached = React.useRef(false);
   const isFetching = React.useRef(false);
   useEffect(() => {
     getListData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   async function getListData(isRefresh?: boolean) {
     if (isFetching.current) {
@@ -37,16 +31,17 @@ function ReportListScreen({}: Props) {
     isFetching.current = true;
     setLoading(isRefresh ? 'refresh' : 'more');
     const { data } = await get(
-      `/report?${qs.stringify({ offset: isRefresh ? 0 : offset, limit })}`,
+      `/report?${qs.stringify({
+        offset: isRefresh ? 0 : listData.length,
+        limit,
+      })}`,
     );
     setLoading(null);
     if (data && data.count) {
       if (isRefresh) {
         setListData(data.rows);
-        setOffset(0);
       } else {
         setListData(listData.concat(data.rows));
-        setOffset(offset + data.count);
       }
       if (data.count < limit) {
         isEndReached.current = true;
@@ -94,7 +89,7 @@ function ReportListScreen({}: Props) {
         data={listData}
         refreshing={loading === 'refresh'}
         onRefresh={() => getListData(true)}
-        keyExtractor={item => String(item.id)}
+        keyExtractor={(item) => String(item.id)}
         renderItem={renderItem}
         onEndReached={() => getListData()}
       />
