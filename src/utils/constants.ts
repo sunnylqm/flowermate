@@ -1,6 +1,6 @@
 import { User } from 'types/types';
 
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 export { screenHeight, screenWidth };

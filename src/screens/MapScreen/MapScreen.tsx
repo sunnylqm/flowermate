@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Alert,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
-import { connect, useDispatch } from 'react-redux';
-import { ReduxState, User, Location, MapLocation, Report } from 'types/types';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { MapLocation, Report } from 'types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { get } from 'utils/request';
 // @ts-ignore
@@ -15,7 +9,6 @@ import { MapView } from 'react-native-amap3d';
 import actions from 'reduxState/actions';
 import qs from 'qs';
 import ReportMarker from './ReportMarker';
-import _ from 'lodash';
 import { screenWidth } from 'utils/constants';
 
 interface ReportsMap {
@@ -41,13 +34,10 @@ export default function MapScreen({}: Props) {
     }
   }
 
-  const updateLocation = _.throttle(
-    (latLon) => dispatch(actions.setLocation(latLon)),
-    5000,
-  );
   // @ts-ignore
   function onLocation({ nativeEvent: { latitude: lat, longitude: lon } }) {
-    updateLocation({ lat, lon });
+    // updateLocation({ lat, lon });
+    dispatch(actions.setLocation({ lat, lon }));
   }
 
   function onStatusChangeComplete({
@@ -76,7 +66,7 @@ export default function MapScreen({}: Props) {
         // showsCompass={false}
         showsLocationButton
         locationEnabled
-        // locationInterval={5000}
+        locationInterval={5000}
         onLocation={onLocation}
         onStatusChangeComplete={onStatusChangeComplete}
       >

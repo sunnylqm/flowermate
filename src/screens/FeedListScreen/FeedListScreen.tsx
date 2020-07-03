@@ -4,9 +4,7 @@ import {
   SafeAreaView,
   FlatList,
   ActivityIndicator,
-  Button,
   View,
-  Text
 } from 'react-native';
 import { ScreensParamList, Feed } from 'types/types';
 import { get } from 'utils/request';
@@ -23,7 +21,6 @@ interface Props {}
 function FeedListScreen({}: Props) {
   const user = useSelector(selectUser)!;
   const [listData, setListData] = useState([]);
-  const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<'refresh' | 'more' | null>(null);
   const isEndReached = React.useRef(false);
   const isFetching = React.useRef(false);
@@ -34,6 +31,7 @@ function FeedListScreen({}: Props) {
     if (isFocused) {
       getListData(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFocused]);
   async function getListData(isRefresh?: boolean) {
     if (isFetching.current) {
@@ -46,7 +44,7 @@ function FeedListScreen({}: Props) {
     setLoading(isRefresh ? 'refresh' : 'more');
     const { data } = await get(
       `/feed?${qs.stringify({
-        offset: isRefresh ? 0 : offset, // 起始偏移
+        offset: isRefresh ? 0 : listData.length, // 起始偏移
         limit, // 跨度值
         userId: showMyself ? user.id : undefined,
       })}`,
@@ -61,7 +59,6 @@ function FeedListScreen({}: Props) {
         currentCount = data.rows.length + listData.length;
         setListData(listData.concat(data.rows));
       }
-      setOffset(currentCount);
       if (currentCount >= data.count) {
         isEndReached.current = true;
       } else {
@@ -74,11 +71,10 @@ function FeedListScreen({}: Props) {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList<Feed>
-        // extraData={this.state.chosenItemId}
         data={listData}
         refreshing={loading === 'refresh'}
         onRefresh={() => getListData(true)}
-        keyExtractor={item => String(item.id)}
+        keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => <FeedItem item={item} />}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         onEndReached={() => getListData()}

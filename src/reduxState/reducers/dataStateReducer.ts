@@ -11,11 +11,11 @@ export const initialState: Readonly<DataState> = {
 };
 
 export default (originalState = initialState, action: Action) =>
-  produce(originalState, state => {
+  produce(originalState, (state) => {
     switch (action.type) {
       case 'setUser':
         state.user = action.payload;
-        state.token = state.user.token
+        state.token = state.user.token;
         return;
       case 'setLocation':
         state.location = action.payload;
