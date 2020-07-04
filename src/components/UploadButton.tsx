@@ -1,16 +1,32 @@
 import React from 'react';
 import { post } from 'utils/request';
 import pickImage from 'utils/pickImage';
-import { TouchableOpacity, StyleSheet, ActivityIndicator, ViewProps, StyleProp } from 'react-native';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator,
+  ViewProps,
+  StyleProp,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface UploadButtonProps {
   tag: string;
   style?: StyleProp<ViewProps>;
   onUpload(): void;
-  onUploadFinished({ fileId, localUri }: { fileId: number; localUri: string }): void;
+  onUploadFinished({
+    fileId,
+    localUri,
+  }: {
+    fileId: number;
+    localUri: string;
+  }): void;
 }
-export default function UploadButton({ style, onUpload, onUploadFinished }: UploadButtonProps) {
+export default function UploadButton({
+  style,
+  onUpload,
+  onUploadFinished,
+}: UploadButtonProps) {
   const [uploading, setUploading] = React.useState(false);
   async function uploadImage() {
     if (uploading) {
@@ -24,11 +40,11 @@ export default function UploadButton({ style, onUpload, onUploadFinished }: Uplo
     formData.append('file', {
       uri: image.path,
       type: image.mime,
-      name: `file.jpg`,
+      name: 'file.jpg',
     });
     setUploading(true);
     onUpload();
-    const { data: fileId } = await post(`/file`, formData);
+    const { data: fileId } = await post('/file', formData);
     setUploading(false);
     onUploadFinished({
       fileId,
@@ -37,7 +53,11 @@ export default function UploadButton({ style, onUpload, onUploadFinished }: Uplo
   }
   return (
     <TouchableOpacity style={[styles.container, style]} onPress={uploadImage}>
-      {uploading ? <ActivityIndicator /> : <Icon style={styles.icon} name="plus" />}
+      {uploading ? (
+        <ActivityIndicator />
+      ) : (
+        <Icon style={styles.icon} name="plus" />
+      )}
     </TouchableOpacity>
   );
 }

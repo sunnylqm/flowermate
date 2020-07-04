@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "reverse": "adb reverse tcp:9999 tcp:9999",
-    "postinstall": "rndebugger-open && patch-package && npx pod-install",
+    "postinstall": "rndebugger-open && patch-package",
     "apk": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
@@ -26,7 +26,7 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-action-sheet": "^2.2.0",
-    "react-native-amap3d": "1.1.1",
+    "react-native-amap3d": "2.0.1",
     "react-native-elements": "^2.0.4",
     "react-native-gallery-swiper": "1.26.0",
     "react-native-gesture-handler": "^1.6.1",
@@ -61,7 +61,7 @@
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-jest": "^26.1.0",
-    "eslint": "^7.3.1",
+    "eslint": "^7.4.0",
     "jest": "^26.1.0",
     "metro-react-native-babel-preset": "^0.60.0",
     "react-native-debugger-open": "^0.3.25",

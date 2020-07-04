@@ -19,7 +19,10 @@ async function request(
   const additionalHeader = (options.method === 'POST' ||
     options.method === 'PUT') && {
     Accept: 'application/json',
-    'Content-Type': options.body instanceof FormData ? 'multipart/form-data' : 'application/json',
+    'Content-Type':
+      options.body instanceof FormData
+        ? 'multipart/form-data'
+        : 'application/json',
   };
   const resp = await Promise.race<Response | undefined>([
     fetch(apiEndpoint + url, {
@@ -29,9 +32,9 @@ async function request(
         ...(options.headers || {}),
         Authorization: `Bearer ${getToken()}`,
       },
-    }).catch(e => undefined),
-    new Promise<undefined>(resolve =>
-      setTimeout(resolve, options.timeout || 10000),
+    }).catch((_e) => undefined),
+    new Promise<undefined>((resolve) =>
+      setTimeout(resolve, options.timeout || 20000),
     ),
   ]);
   if (resp) {

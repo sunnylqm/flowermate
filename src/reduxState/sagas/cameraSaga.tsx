@@ -3,7 +3,11 @@ import { select, takeEvery, call } from 'redux-saga/effects';
 import actions from 'reduxState/actions';
 import { post } from 'utils/request';
 import { Alert, Text } from 'react-native';
-import { showLoadingModal, closeLoadingModal, showImageResultDialog } from 'components/Dialog';
+import {
+  showLoadingModal,
+  closeLoadingModal,
+  showImageResultDialog,
+} from 'components/Dialog';
 import { selectLocation } from 'reduxState/selectors';
 import { Location } from 'types/types';
 import pickImage from 'utils/pickImage';
@@ -14,7 +18,7 @@ export function* watchShowCameraOptions() {
 
 function* showCameraOptions() {
   const { lon, lat }: Location = yield select(selectLocation);
-  yield call(recognizeImage,lon, lat);
+  yield call(recognizeImage, lon, lat);
 }
 
 async function recognizeImage(lon: number, lat: number) {
@@ -26,7 +30,7 @@ async function recognizeImage(lon: number, lat: number) {
   formData.append('file', {
     uri: pic.path,
     type: pic.mime,
-    name: `file.jpg`,
+    name: 'file.jpg',
   });
   showLoadingModal('正在上传...');
   const { ok, data: fileId } = await post('/file', formData, {
@@ -42,7 +46,7 @@ async function recognizeImage(lon: number, lat: number) {
       data: {
         extra: { name, score, baike_info = {} },
       },
-    } = await post(`/report`, {
+    } = await post('/report', {
       type: 'plant',
       desc: '',
       image: fileId,

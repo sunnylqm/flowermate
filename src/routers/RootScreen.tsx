@@ -12,11 +12,7 @@ function RootScreen() {
   React.useEffect(() => SplashScreen.hide(), []);
   return (
     <NavigationContainer ref={navigationRef}>
-      {token ? (
-        <MainStackNavigator />
-      ) : (
-        <AuthStackNavigator />
-      )}
+      {token ? <MainStackNavigator /> : <AuthStackNavigator />}
     </NavigationContainer>
   );
 }

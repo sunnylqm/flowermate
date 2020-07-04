@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { MapLocation, Report } from 'types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { get } from 'utils/request';
-// @ts-ignore
 import { MapView } from 'react-native-amap3d';
 import actions from 'reduxState/actions';
 import qs from 'qs';
@@ -16,7 +15,6 @@ interface ReportsMap {
 }
 
 interface Props {}
-
 export default function MapScreen({}: Props) {
   const dispatch = useDispatch();
   const [reportsMap, setReportsMap] = useState<ReportsMap>({});
@@ -34,41 +32,25 @@ export default function MapScreen({}: Props) {
     }
   }
 
-  // @ts-ignore
-  function onLocation({ nativeEvent: { latitude: lat, longitude: lon } }) {
-    // updateLocation({ lat, lon });
-    dispatch(actions.setLocation({ lat, lon }));
-  }
-
-  function onStatusChangeComplete({
-    nativeEvent: {
-      latitude: lat,
-      longitude: lon,
-      latitudeDelta: latDelta,
-      longitudeDelta: lonDelta,
-    },
-  }: {
-    nativeEvent: {
-      latitude: number;
-      longitude: number;
-      latitudeDelta: number;
-      longitudeDelta: number;
-    };
-  }) {
-    checkReportsByLocation({ lon, lat, lonDelta, latDelta });
-  }
-
   return (
     <View style={styles.container}>
       <MapView
         style={styles.container}
-        mapType="satellite"
         // showsCompass={false}
         showsLocationButton
         locationEnabled
         locationInterval={5000}
-        onLocation={onLocation}
-        onStatusChangeComplete={onStatusChangeComplete}
+        onLocation={(e) => {
+          dispatch(actions.setLocation({ lat: e.latitude, lon: e.longitude }));
+        }}
+        onStatusChangeComplete={({ region }) => {
+          checkReportsByLocation({
+            lon: region.longitude,
+            lat: region.latitude,
+            lonDelta: region.longitudeDelta,
+            latDelta: region.latitudeDelta,
+          });
+        }}
       >
         {Object.keys(reportsMap).map((reportId) => (
           <ReportMarker key={reportId} report={reportsMap[reportId]} />

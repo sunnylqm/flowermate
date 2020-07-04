@@ -11,6 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 #if DEBUG
 #import <FlipperKit/FlipperClient.h>
@@ -37,7 +38,8 @@ static void InitializeFlipper(UIApplication *application) {
   #if DEBUG
     InitializeFlipper(application);
   #endif
-
+  
+  [AMapServices sharedServices].apiKey = @"33ae810235a568212ed515deebf34da5";
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"flowermate"

@@ -1,11 +1,6 @@
 import actions from 'reduxState/actions';
 import React, { useState } from 'react';
-import {
-  Alert,
-  StyleSheet,
-  View,
-  SafeAreaView,
-} from 'react-native';
+import { Alert, StyleSheet, View, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { navigate } from 'utils/navigationService';
 import { ListItem } from 'react-native-elements';
@@ -33,7 +28,7 @@ function ProfileScreen({}: Props) {
         options: ['更换头像', '取消'],
         cancelButtonIndex: 1,
       },
-      async buttonIndex => {
+      async (buttonIndex) => {
         if (buttonIndex === 0) {
           const pic = await pickImage();
           if (!pic) {
@@ -43,13 +38,10 @@ function ProfileScreen({}: Props) {
           formData.append('file', {
             uri: pic.path,
             type: pic.mime,
-            name: `file.jpg`,
+            name: 'file.jpg',
           });
           showLoadingModal('正在上传...');
-          const { data: fileId } = await post(
-            `/file`,
-            formData,
-          );
+          const { data: fileId } = await post('/file', formData);
           if (fileId) {
             const { ok } = await put(`/user/${user.id}`, {
               avatar: fileId,
