@@ -17,8 +17,12 @@ export function* watchShowCameraOptions() {
 }
 
 function* showCameraOptions() {
-  const { lon, lat }: Location = yield select(selectLocation);
-  yield call(recognizeImage, lon, lat);
+  const location: Location | undefined = yield select(selectLocation);
+  if (location) {
+    yield call(recognizeImage, location.lon, location.lat);
+  } else {
+    console.warn('尚未获得当前定位');
+  }
 }
 
 async function recognizeImage(lon: number, lat: number) {
