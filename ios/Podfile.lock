@@ -1,6 +1,6 @@
 PODS:
-  - AMap3DMap (7.2.0):
-    - AMapFoundation (~> 1.5)
+  - AMap3DMap (7.5.0):
+    - AMapFoundation (~> 1.6.3)
   - AMapFoundation (1.6.3)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
@@ -237,7 +237,7 @@ PODS:
     - React-jsi (= 0.62.2)
   - React-jsinspector (0.62.2)
   - react-native-amap3d (2.0.1):
-    - AMap3DMap (~> 7.2.0)
+    - AMap3DMap (~> 7.5.0)
     - React
   - react-native-image-picker (2.3.1):
     - React
@@ -323,7 +323,7 @@ PODS:
     - TOCropViewController
   - RNScreens (2.9.0):
     - React
-  - RNVectorIcons (6.6.0):
+  - RNVectorIcons (7.0.0):
     - React
   - TOCropViewController (2.5.2)
   - Yoga (1.14.0)
@@ -483,7 +483,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  AMap3DMap: be13191194c9aeb29a67d9d3e9a797588fb329aa
+  AMap3DMap: fc7c911f5cf079d544ad7faec256c9554cbbb202
   AMapFoundation: 9ed923193b357ebb30a073e9fe255d3c24054d5a
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
@@ -510,7 +510,7 @@ SPEC CHECKSUMS:
   React-jsi: b6dc94a6a12ff98e8877287a0b7620d365201161
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
-  react-native-amap3d: f3fba472bce0e54f6fd9dd91f474f28af465ee13
+  react-native-amap3d: d548f40afdfe24ef51d9255e842388365a23137c
   react-native-image-picker: 6a850c41f57f0848d918c2a77aedd7aa272ffa30
   react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
@@ -530,7 +530,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNImageCropPicker: f0557a908758c4a3f83978894ec7227651529b45
   RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
-  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   TOCropViewController: e9da34f484aedd4e5d5a8ab230ba217cfe16c729
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

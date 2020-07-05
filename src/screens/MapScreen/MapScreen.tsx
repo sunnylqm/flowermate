@@ -46,12 +46,12 @@ export default function MapScreen({}: Props) {
         onLocation={(e) => {
           dispatch(actions.setLocation({ lat: e.latitude, lon: e.longitude }));
         }}
-        onStatusChangeComplete={(e) => {
+        onStatusChangeComplete={({ region }) => {
           checkReportsByLocation({
-            lon: e.longitude,
-            lat: e.latitude,
-            lonDelta: e.longitudeDelta,
-            latDelta: e.latitudeDelta,
+            lon: region.longitude,
+            lat: region.latitude,
+            lonDelta: region.longitudeDelta,
+            latDelta: region.latitudeDelta,
           });
         }}
       >

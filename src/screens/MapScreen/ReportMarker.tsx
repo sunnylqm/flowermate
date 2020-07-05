@@ -1,5 +1,11 @@
 import React from 'react';
-import { Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import { MapView } from 'react-native-amap3d';
 import { getImageUrl } from 'utils/constants';
 import { Report } from 'types/types';
@@ -40,7 +46,17 @@ export default function ReportMarker({ report }: { report: Report }) {
           style={styles.markerWrapper}
           onPress={showReportDetail}
         >
-          <Image source={imageUri} style={styles.markerImage} />
+          <Image
+            onLoad={() => {
+              if (Platform.OS === 'android') {
+                // https://github.com/qiuxiang/react-native-baidumap-sdk/blob/master/docs/marker.md#update-android-only
+                // @ts-ignore
+                setTimeout(() => markerRef.current?.update(), 100);
+              }
+            }}
+            source={imageUri}
+            style={styles.markerImage}
+          />
         </TouchableOpacity>
       )}
     />
