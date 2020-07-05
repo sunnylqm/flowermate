@@ -21,7 +21,7 @@ function* showCameraOptions() {
   if (location) {
     yield call(recognizeImage, location.lon, location.lat);
   } else {
-    console.warn('尚未获得当前定位');
+    Alert.alert('尚未获得当前定位');
   }
 }
 
