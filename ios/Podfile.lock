@@ -1,7 +1,7 @@
 PODS:
-  - AMap3DMap (6.6.0):
+  - AMap3DMap (7.2.0):
     - AMapFoundation (~> 1.5)
-  - AMapFoundation (1.5.7)
+  - AMapFoundation (1.6.3)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
@@ -236,8 +236,8 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
   - React-jsinspector (0.62.2)
-  - react-native-amap3d (1.1.1):
-    - AMap3DMap (~> 6.6.0)
+  - react-native-amap3d (2.0.1):
+    - AMap3DMap (~> 7.2.0)
     - React
   - react-native-image-picker (2.3.1):
     - React
@@ -312,12 +312,12 @@ PODS:
     - React
   - RNGestureHandler (1.6.1):
     - React
-  - RNImageCropPicker (0.32.0):
+  - RNImageCropPicker (0.32.2):
     - React-Core
     - React-RCTImage
-    - RNImageCropPicker/QBImagePickerController (= 0.32.0)
+    - RNImageCropPicker/QBImagePickerController (= 0.32.2)
     - TOCropViewController
-  - RNImageCropPicker/QBImagePickerController (0.32.0):
+  - RNImageCropPicker/QBImagePickerController (0.32.2):
     - React-Core
     - React-RCTImage
     - TOCropViewController
@@ -483,8 +483,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  AMap3DMap: 37425c7d47420cbfaee88328be3dc3781814b999
-  AMapFoundation: 216d58448c80356434ac4332250a8fdb2f5c4d1e
+  AMap3DMap: be13191194c9aeb29a67d9d3e9a797588fb329aa
+  AMapFoundation: 9ed923193b357ebb30a073e9fe255d3c24054d5a
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -510,7 +510,7 @@ SPEC CHECKSUMS:
   React-jsi: b6dc94a6a12ff98e8877287a0b7620d365201161
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
-  react-native-amap3d: 7ee6406ae17b263f4ae4bbb9eacd1bc53cc8bd4f
+  react-native-amap3d: f3fba472bce0e54f6fd9dd91f474f28af465ee13
   react-native-image-picker: 6a850c41f57f0848d918c2a77aedd7aa272ffa30
   react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
@@ -528,7 +528,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
-  RNImageCropPicker: fc4b4d2a4d7176eeb6442fa191ba56493c14b6d6
+  RNImageCropPicker: f0557a908758c4a3f83978894ec7227651529b45
   RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   TOCropViewController: e9da34f484aedd4e5d5a8ab230ba217cfe16c729

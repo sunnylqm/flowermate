@@ -1,0 +1,47 @@
+diff --git a/node_modules/react-native-amap3d/lib/android/build.gradle b/node_modules/react-native-amap3d/lib/android/build.gradle
+index 5bcb6a2..42f8608 100644
+--- a/node_modules/react-native-amap3d/lib/android/build.gradle
++++ b/node_modules/react-native-amap3d/lib/android/build.gradle
+@@ -29,6 +29,6 @@ android {
+ 
+ dependencies {
+     compileOnly 'com.facebook.react:react-native:+'
+-    implementation 'com.amap.api:3dmap:7.2.0'
++    implementation 'com.amap.api:3dmap:7.5.0'
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+ }
+diff --git a/node_modules/react-native-amap3d/lib/ios/react-native-amap3d.podspec b/node_modules/react-native-amap3d/lib/ios/react-native-amap3d.podspec
+index 3ae18c7..96d6c60 100644
+--- a/node_modules/react-native-amap3d/lib/ios/react-native-amap3d.podspec
++++ b/node_modules/react-native-amap3d/lib/ios/react-native-amap3d.podspec
+@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
+   s.source_files = '**/*.{h,m}'
+ 
+   s.dependency 'React'
+-  s.dependency 'AMap3DMap', "~> 7.2.0"
++  s.dependency 'AMap3DMap', "~> 7.5.0"
+ end
+diff --git a/node_modules/react-native-amap3d/lib/js/types.d.ts b/node_modules/react-native-amap3d/lib/js/types.d.ts
+index 5006146..46f53cf 100644
+--- a/node_modules/react-native-amap3d/lib/js/types.d.ts
++++ b/node_modules/react-native-amap3d/lib/js/types.d.ts
+@@ -34,7 +34,7 @@ export interface Region extends LatLng {
+ /**
+  * 地图状态
+  */
+-export interface MapStatus {
++export interface MapStatus extends Region {
+     /**
+      * 中心坐标
+      */
+@@ -51,10 +51,6 @@ export interface MapStatus {
+      * 倾斜角度
+      */
+     tilt: number;
+-    /**
+-     * 显示区域
+-     */
+-    region: Region;
+ }
+ /**
+  * 定位
