@@ -1,6 +1,6 @@
 import actions from 'reduxState/actions';
 import React, { useState } from 'react';
-import { Alert, StyleSheet, View, SafeAreaView } from 'react-native';
+import { Alert, StyleSheet, View, SafeAreaView, Linking } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { navigate } from 'utils/navigationService';
 import { ListItem } from 'react-native-elements';
@@ -19,9 +19,11 @@ function ProfileScreen({}: Props) {
   const user = useSelector(selectUser)!;
   const setUser = React.useCallback(
     (user: User) => dispatch(actions.setUser(user)),
-    [],
+    [dispatch],
   );
-  const logout = React.useCallback(() => dispatch(actions.logout()), []);
+  const logout = React.useCallback(() => dispatch(actions.logout()), [
+    dispatch,
+  ]);
   function changeProfile() {
     ActionSheet.showActionSheetWithOptions(
       {
@@ -95,6 +97,27 @@ function ProfileScreen({}: Props) {
         />
       </View>
       <View style={styles.listGroup}>
+        {/* <ListItem
+          title="启动开课吧"
+          leftAvatar={{
+            source: require('assets/kaikeba.png'),
+            containerStyle: {
+              width: 24,
+              height: 24,
+              borderRadius: 12,
+              overflow: 'hidden',
+            },
+          }}
+          chevron
+          onPress={async () => {
+            const url = 'kaikeba://';
+            if (await Linking.canOpenURL(url)) {
+              Linking.openURL(url);
+            } else {
+              Alert.alert('你似乎还没有安装开课吧');
+            }
+          }}
+        /> */}
         <ListItem
           title="退出登录"
           leftIcon={{ name: 'power-settings-new' }}

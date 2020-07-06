@@ -73,9 +73,7 @@ const LoginScreen = ({}: Props) => {
             <Text style={styles.link} onPress={gotoRegister}>
               注册用户
             </Text>
-            <Text style={styles.link}>
-              忘记密码？
-            </Text>
+            <Text style={styles.link}>忘记密码？</Text>
           </View>
         </View>
         <Button
@@ -103,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   input: {
-    marginVertical: 10,
+    marginTop: 10,
   },
   title: {
     fontSize: 28,

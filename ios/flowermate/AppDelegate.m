@@ -12,6 +12,7 @@
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "RCTPushy.h"
 
 #if DEBUG
 #import <FlipperKit/FlipperClient.h>
@@ -61,7 +62,8 @@ static void InitializeFlipper(UIApplication *application) {
 #if DEBUG
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 #else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+  // 非DEBUG情况下替换为热更新bundle
+  return [RCTPushy bundleURL];
 #endif
 }
 

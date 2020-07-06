@@ -5966,6 +5966,11 @@ react-native-status-bar-height@^2.5.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-update@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.npm.taobao.org/react-native-update/download/react-native-update-5.6.0.tgz#f560f4f3a0b773490fe94b31820989afa6e9a1b1"
+  integrity sha1-9WD086C3c0kP6UsxggmJr6bpobE=
+
 react-native-vector-icons@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npm.taobao.org/react-native-vector-icons/download/react-native-vector-icons-7.0.0.tgz#5b92ed363c867645daad48c559e1f99efcfbb813"

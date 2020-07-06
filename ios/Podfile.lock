@@ -245,6 +245,17 @@ PODS:
     - React
   - react-native-splash-screen (3.2.0):
     - React
+  - react-native-update (5.6.0):
+    - React
+    - react-native-update/BSDiff (= 5.6.0)
+    - react-native-update/RCTPushy (= 5.6.0)
+    - SSZipArchive
+  - react-native-update/BSDiff (5.6.0):
+    - React
+    - SSZipArchive
+  - react-native-update/RCTPushy (5.6.0):
+    - React
+    - SSZipArchive
   - react-native-webview (10.3.2):
     - React
   - React-RCTActionSheet (0.62.2):
@@ -325,6 +336,7 @@ PODS:
     - React
   - RNVectorIcons (7.0.0):
     - React
+  - SSZipArchive (2.2.3)
   - TOCropViewController (2.5.2)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -370,6 +382,7 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
+  - react-native-update (from `../node_modules/react-native-update`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -405,6 +418,7 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - OpenSSL-Universal
+    - SSZipArchive
     - TOCropViewController
     - YogaKit
 
@@ -445,6 +459,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
+  react-native-update:
+    :path: "../node_modules/react-native-update"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-RCTActionSheet:
@@ -514,6 +530,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 6a850c41f57f0848d918c2a77aedd7aa272ffa30
   react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-update: f98f3a566b30abfdb0ceb4faca2d67f922c9cc18
   react-native-webview: 679b6f400176e2ea8a785acf7ae16cf282e7d1eb
   React-RCTActionSheet: f41ea8a811aac770e0cc6e0ad6b270c644ea8b7c
   React-RCTAnimation: 49ab98b1c1ff4445148b72a3d61554138565bad0
@@ -531,6 +548,7 @@ SPEC CHECKSUMS:
   RNImageCropPicker: f0557a908758c4a3f83978894ec7227651529b45
   RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   TOCropViewController: e9da34f484aedd4e5d5a8ab230ba217cfe16c729
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
