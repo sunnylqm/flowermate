@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { MapLocation, Report } from 'types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { get } from 'utils/request';
@@ -9,7 +9,7 @@ import actions from 'reduxState/actions';
 import qs from 'qs';
 import ReportMarker from './ReportMarker';
 import { screenWidth } from 'utils/constants';
-import { selectLocation } from 'reduxState/selectors';
+import { useIsFocused } from '@react-navigation/native';
 
 interface ReportsMap {
   [id: string]: Report;
@@ -18,7 +18,16 @@ interface ReportsMap {
 interface Props {}
 export default function MapScreen({}: Props) {
   const dispatch = useDispatch();
-  const location = useSelector(selectLocation);
+  const mapRef = React.useRef<MapView>();
+  const isFocused = useIsFocused();
+  const movedToCurrentLocation = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!isFocused) {
+      movedToCurrentLocation.current = false;
+    }
+  }, [isFocused]);
+
   const [reportsMap, setReportsMap] = useState<ReportsMap>({});
   async function checkReportsByLocation(mapLocation: MapLocation) {
     const { data: reports } = await get(
@@ -36,29 +45,43 @@ export default function MapScreen({}: Props) {
 
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.container}
-        // showsCompass={false}
-        center={location && { latitude: location.lat, longitude: location.lon }}
-        showsLocationButton
-        locationEnabled
-        locationInterval={5000}
-        onLocation={(e) => {
-          dispatch(actions.setLocation({ lat: e.latitude, lon: e.longitude }));
-        }}
-        onStatusChangeComplete={({ region }) => {
-          checkReportsByLocation({
-            lon: region.longitude,
-            lat: region.latitude,
-            lonDelta: region.longitudeDelta,
-            latDelta: region.latitudeDelta,
-          });
-        }}
-      >
-        {Object.keys(reportsMap).map((reportId) => (
-          <ReportMarker key={reportId} report={reportsMap[reportId]} />
-        ))}
-      </MapView>
+      {isFocused && (
+        <MapView
+          ref={mapRef}
+          style={styles.container}
+          // showsCompass={false}
+          showsLocationButton
+          locationEnabled
+          locationInterval={5000}
+          onLocation={(e) => {
+            if (!movedToCurrentLocation.current) {
+              mapRef.current?.setStatus(
+                {
+                  center: e,
+                },
+                1000,
+              );
+              movedToCurrentLocation.current = true;
+            }
+            dispatch(
+              actions.setLocation({ lat: e.latitude, lon: e.longitude }),
+            );
+          }}
+          onStatusChangeComplete={({ region }) => {
+            checkReportsByLocation({
+              lon: region.longitude,
+              lat: region.latitude,
+              lonDelta: region.longitudeDelta,
+              latDelta: region.latitudeDelta,
+            });
+          }}
+        >
+          {Object.keys(reportsMap).map((reportId) => (
+            <ReportMarker key={reportId} report={reportsMap[reportId]} />
+          ))}
+        </MapView>
+      )}
+
       <TouchableOpacity
         style={styles.postButton}
         onPress={() => dispatch(actions.showCameraOptions())}
