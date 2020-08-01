@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-amap3d/lib/android/build.gradle b/node_modules/react-native-amap3d/lib/android/build.gradle
+index bce1b54..afa78a5 100644
+--- a/node_modules/react-native-amap3d/lib/android/build.gradle
++++ b/node_modules/react-native-amap3d/lib/android/build.gradle
+@@ -29,6 +29,6 @@ android {
+ 
+ dependencies {
+     implementation 'com.facebook.react:react-native:+'
+-    implementation 'com.amap.api:3dmap:7.2.0'
++    implementation 'com.amap.api:3dmap:7.5.0'
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+ }
