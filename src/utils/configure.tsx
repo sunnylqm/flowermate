@@ -13,9 +13,11 @@ import { Provider } from 'react-redux';
 import { ReduxStore } from 'reduxState/store';
 import React from 'react';
 
-setSiblingWrapper(sibling => <Provider store={ReduxStore}>{sibling}</Provider>);
+setSiblingWrapper((sibling) => (
+  <Provider store={ReduxStore}>{sibling}</Provider>
+));
 
-import { YellowBox } from 'react-native';
+import { LogBox } from 'react-native';
 const IGNORED_WARNINGS = [
   '`-[RCTRootView cancelTouches]`',
   'Please update the following components: AnimatedComponent',
@@ -24,9 +26,14 @@ const IGNORED_WARNINGS = [
 ];
 const oldConsoleWarn = console.warn;
 console.warn = (...args: any[]) => {
-  if (typeof args[0] === 'string' && IGNORED_WARNINGS.some(ignoredWarning => args[0].startsWith(ignoredWarning))) {
+  if (
+    typeof args[0] === 'string' &&
+    IGNORED_WARNINGS.some((ignoredWarning) =>
+      args[0].startsWith(ignoredWarning),
+    )
+  ) {
     return;
   }
   return oldConsoleWarn(...args);
 };
-YellowBox.ignoreWarnings(IGNORED_WARNINGS);
+LogBox.ignoreLogs(IGNORED_WARNINGS);
