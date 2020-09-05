@@ -246,18 +246,18 @@ PODS:
     - React
   - react-native-splash-screen (3.2.0):
     - React
-  - react-native-update (5.7.1):
+  - react-native-update (5.7.2):
     - React
-    - react-native-update/BSDiff (= 5.7.1)
-    - react-native-update/RCTPushy (= 5.7.1)
+    - react-native-update/BSDiff (= 5.7.2)
+    - react-native-update/RCTPushy (= 5.7.2)
     - SSZipArchive
-  - react-native-update/BSDiff (5.7.1):
-    - React
-    - SSZipArchive
-  - react-native-update/RCTPushy (5.7.1):
+  - react-native-update/BSDiff (5.7.2):
     - React
     - SSZipArchive
-  - react-native-webview (10.8.2):
+  - react-native-update/RCTPushy (5.7.2):
+    - React
+    - SSZipArchive
+  - react-native-webview (10.8.3):
     - React
   - React-RCTActionSheet (0.63.2):
     - React-Core/RCTActionSheetHeaders (= 0.63.2)
@@ -323,14 +323,14 @@ PODS:
     - React
   - RNCMaskedView (0.1.10):
     - React
-  - RNGestureHandler (1.7.0):
+  - RNGestureHandler (1.8.0):
     - React
-  - RNImageCropPicker (0.33.2):
+  - RNImageCropPicker (0.33.3):
     - React-Core
     - React-RCTImage
-    - RNImageCropPicker/QBImagePickerController (= 0.33.2)
+    - RNImageCropPicker/QBImagePickerController (= 0.33.3)
     - TOCropViewController
-  - RNImageCropPicker/QBImagePickerController (0.33.2):
+  - RNImageCropPicker/QBImagePickerController (0.33.3):
     - React-Core
     - React-RCTImage
     - TOCropViewController
@@ -531,8 +531,8 @@ SPEC CHECKSUMS:
   react-native-amap3d: 26abcffc0fa7cd9f757cd9afe9bf7addb95105b0
   react-native-safe-area-context: 955ecfce672683b495d9294d2f154a9ad1d9796b
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
-  react-native-update: 4761028996bab8a6191d5303a04ec74cb93ab725
-  react-native-webview: 0e49a2e85f42b20ea5579928a8b254a07fa901dc
+  react-native-update: 7602220eccf4ccac05bc90035a541300f2c0189a
+  react-native-webview: 598605cd213f5096e695f5b33fbee210a47e60ab
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
   React-RCTAnimation: 9a883bbe1e9d2e158d4fb53765ed64c8dc2200c6
   React-RCTBlob: 39cf0ece1927996c4466510e25d2105f67010e13
@@ -545,8 +545,8 @@ SPEC CHECKSUMS:
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
   RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
-  RNImageCropPicker: 82f4caef16a37c07cbb0171be95aa5584f99bd9d
+  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNImageCropPicker: c7858ca10612c16594b1b4771f0f344b28aa8faf
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
