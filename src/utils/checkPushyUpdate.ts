@@ -32,7 +32,7 @@ export default async function checkPushyUpdate() {
         },
       ]);
     } else if (info.upToDate) {
-      Alert.alert('提示', '您的应用版本已是最新.');
+      // Alert.alert('提示', '您的应用版本已是最新.');
     } else {
       Alert.alert(
         '提示',
