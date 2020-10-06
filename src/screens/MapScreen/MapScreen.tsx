@@ -10,6 +10,7 @@ import qs from 'qs';
 import ReportMarker from './ReportMarker';
 import { screenWidth } from 'utils/constants';
 import { useIsFocused } from '@react-navigation/native';
+import { showCamera } from 'utils/showCamera';
 
 interface ReportsMap {
   [id: string]: Report;
@@ -82,10 +83,7 @@ export default function MapScreen({}: Props) {
         </MapView>
       )}
 
-      <TouchableOpacity
-        style={styles.postButton}
-        onPress={() => dispatch(actions.showCameraOptions())}
-      >
+      <TouchableOpacity style={styles.postButton} onPress={showCamera}>
         <Icon name="camera" size={24} />
       </TouchableOpacity>
     </View>

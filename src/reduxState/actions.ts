@@ -8,9 +8,6 @@ import {
 import { Location, User } from 'types/types';
 
 const actions = createActions({
-  // UI
-  showCameraOptions: NoArgAction,
-
   // Data
   setUser: createAction<User>(),
   setLocation: createAction<Location>(),

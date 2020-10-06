@@ -1,6 +1,4 @@
 import React from 'react';
-import { select, takeEvery, call } from 'redux-saga/effects';
-import actions from 'reduxState/actions';
 import { post } from 'utils/request';
 import { Alert, Text } from 'react-native';
 import {
@@ -11,15 +9,12 @@ import {
 import { selectLocation } from 'reduxState/selectors';
 import { Location } from 'types/types';
 import pickImage from 'utils/pickImage';
+import { ReduxStore } from 'reduxState/store';
 
-export function* watchShowCameraOptions() {
-  yield takeEvery(actions.showCameraOptions, showCameraOptions);
-}
-
-function* showCameraOptions() {
-  const location: Location | undefined = yield select(selectLocation);
+export function showCamera() {
+  const location: Location | undefined = selectLocation(ReduxStore.getState());
   if (location) {
-    yield call(recognizeImage, location.lon, location.lat);
+    recognizeImage(location.lon, location.lat);
   } else {
     Alert.alert('尚未获得当前定位');
   }

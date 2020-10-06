@@ -246,19 +246,19 @@ PODS:
     - React-Core
   - react-native-splash-screen (3.2.0):
     - React
-  - react-native-update (5.9.0):
+  - react-native-update (5.9.1):
     - React
-    - react-native-update/BSDiff (= 5.9.0)
-    - react-native-update/RCTPushy (= 5.9.0)
+    - react-native-update/BSDiff (= 5.9.1)
+    - react-native-update/RCTPushy (= 5.9.1)
     - SSZipArchive
-  - react-native-update/BSDiff (5.9.0):
-    - React
-    - SSZipArchive
-  - react-native-update/RCTPushy (5.9.0):
+  - react-native-update/BSDiff (5.9.1):
     - React
     - SSZipArchive
-  - react-native-webview (10.9.0):
+  - react-native-update/RCTPushy (5.9.1):
     - React
+    - SSZipArchive
+  - react-native-webview (10.9.2):
+    - React-Core
   - React-RCTActionSheet (0.63.3):
     - React-Core/RCTActionSheetHeaders (= 0.63.3)
   - React-RCTAnimation (0.63.3):
@@ -531,8 +531,8 @@ SPEC CHECKSUMS:
   react-native-amap3d: 26abcffc0fa7cd9f757cd9afe9bf7addb95105b0
   react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
-  react-native-update: a8b3bc5dd47aacdfca0c38ec3ddee3bce77976f5
-  react-native-webview: bfe5436586b214759bd5043658863549fffc8e92
+  react-native-update: 74ae0ad726a7cd5194b377361b7a3e921a65201c
+  react-native-webview: 4e96d493f9f90ba4f03b28933f30b2964df07e39
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2
   React-RCTBlob: 0b284339cbe4b15705a05e2313a51c6d8b51fa40
