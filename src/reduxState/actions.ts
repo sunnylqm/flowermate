@@ -5,7 +5,7 @@ import {
   NoArgAction,
   ToggleAction,
 } from 'redux-type-actions';
-import { Location, User } from 'types/types';
+import { Location, User } from '@/types/types';
 
 const actions = createActions({
   // Data

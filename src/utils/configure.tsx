@@ -10,7 +10,7 @@ enableScreens();
 
 import { setSiblingWrapper } from 'react-native-root-siblings';
 import { Provider } from 'react-redux';
-import { ReduxStore } from 'reduxState/store';
+import { ReduxStore } from '@/reduxState/store';
 import React from 'react';
 
 setSiblingWrapper((sibling) => (

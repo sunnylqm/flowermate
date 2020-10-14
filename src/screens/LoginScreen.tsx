@@ -9,11 +9,11 @@ import {
   StatusBar,
 } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import { navigate } from 'utils/navigationService';
+import { navigate } from '@/utils/navigationService';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { post } from 'utils/request';
+import { post } from '@/utils/request';
 import { useDispatch } from 'react-redux';
-import actions from 'reduxState/actions';
+import actions from '@/reduxState/actions';
 
 interface Props {}
 

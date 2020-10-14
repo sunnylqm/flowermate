@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
-import ReportListScreen from 'screens/ReportListScreen/ReportListScreen';
-import WebScreen from 'screens/WebScreen';
-import PostFeedScreen from 'screens/HomeScreen/PostFeedScreen';
-import FeedListScreen from 'screens/FeedListScreen/FeedListScreen';
+import ReportListScreen from '@/screens/ReportListScreen/ReportListScreen';
+import WebScreen from '@/screens/WebScreen';
+import PostFeedScreen from '@/screens/HomeScreen/PostFeedScreen';
+import FeedListScreen from '@/screens/FeedListScreen/FeedListScreen';
 import React from 'react';
 
 export type MainStackParamList = {

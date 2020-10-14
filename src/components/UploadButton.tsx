@@ -1,6 +1,6 @@
 import React from 'react';
-import { post } from 'utils/request';
-import pickImage from 'utils/pickImage';
+import { post } from '@/utils/request';
+import pickImage from '@/utils/pickImage';
 import {
   TouchableOpacity,
   StyleSheet,

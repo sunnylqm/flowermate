@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { MapLocation, Report } from 'types/types';
+import { MapLocation, Report } from '@/types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { get } from 'utils/request';
+import { get } from '@/utils/request';
 import { MapView } from 'react-native-amap3d';
-import actions from 'reduxState/actions';
+import actions from '@/reduxState/actions';
 import qs from 'qs';
 import ReportMarker from './ReportMarker';
-import { screenWidth } from 'utils/constants';
+import { screenWidth } from '@/utils/constants';
 import { useIsFocused } from '@react-navigation/native';
-import { showCamera } from 'utils/showCamera';
+import { showCamera } from '@/utils/showCamera';
 
 interface ReportsMap {
   [id: string]: Report;

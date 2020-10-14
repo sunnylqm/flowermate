@@ -1,13 +1,13 @@
 import React from 'react';
-import { Feed, ReduxState, User } from 'types/types';
+import { Feed, ReduxState, User } from '@/types/types';
 import dayjs from 'dayjs';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import ZoomImage from 'components/ZoomImage';
-import { getImageUrl, getUserAvatar, screenWidth } from 'utils/constants';
+import ZoomImage from '@/components/ZoomImage';
+import { getImageUrl, getUserAvatar, screenWidth } from '@/utils/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
-import { selectDataState } from 'reduxState/selectors';
-import { post } from 'utils/request';
+import { selectDataState } from '@/reduxState/selectors';
+import { post } from '@/utils/request';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface Props {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, SafeAreaView, FlatList } from 'react-native';
-import { navigate } from 'utils/navigationService';
-import { get } from 'utils/request';
+import { navigate } from '@/utils/navigationService';
+import { get } from '@/utils/request';
 import qs from 'qs';
-import { Report } from 'types/types';
+import { Report } from '@/types/types';
 import dayjs from 'dayjs';
-import ZoomImage from 'components/ZoomImage';
-import { getImageUrl } from 'utils/constants';
+import ZoomImage from '@/components/ZoomImage';
+import { getImageUrl } from '@/utils/constants';
 
 const limit = 10;
 

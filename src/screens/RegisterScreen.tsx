@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { Image, StyleSheet, View, Text, Alert, ScrollView } from 'react-native';
 import { Button, Input } from 'react-native-elements';
 import { useDispatch } from 'react-redux';
-import { User } from 'types/types';
-import { navigate } from 'utils/navigationService';
+import { User } from '@/types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { post } from 'utils/request';
-import actions from 'reduxState/actions';
+import { post } from '@/utils/request';
+import actions from '@/reduxState/actions';
 
 interface Props {}
-const RegisterScreen = ({ }: Props) => {
+const RegisterScreen = ({}: Props) => {
   const dispatch = useDispatch();
   const [isSignupInProgress, setIsSignupInProgress] = useState(false);
   const [username, setUsername] = useState('');

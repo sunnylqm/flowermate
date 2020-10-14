@@ -1,8 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 
-interface Props {}
-function DiscoverScreen({  }: Props) {
+function DiscoverScreen() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <TabView

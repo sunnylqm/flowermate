@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, StyleSheet, View, Text, Image, TextInput } from 'react-native';
-import { ScreensParamList } from 'types/types';
-import { post } from 'utils/request';
-import UploadButton from 'components/UploadButton';
-import ZoomImage from 'components/ZoomImage';
-import { showLoadingModal, closeLoadingModal } from 'components/Dialog';
+import { ScreensParamList } from '@/types/types';
+import { post } from '@/utils/request';
+import UploadButton from '@/components/UploadButton';
+import ZoomImage from '@/components/ZoomImage';
+import { showLoadingModal, closeLoadingModal } from '@/components/Dialog';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 
@@ -60,7 +60,7 @@ function PostFeedScreen({ navigation }: Props) {
       <TextInput
         placeholder="请输入描述..."
         value={desc}
-        onChangeText={text => {
+        onChangeText={(text) => {
           descRef.current = text;
           setDesc(text);
         }}

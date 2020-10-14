@@ -6,13 +6,13 @@ import {
   ActivityIndicator,
   View,
 } from 'react-native';
-import { ScreensParamList, Feed } from 'types/types';
-import { get } from 'utils/request';
+import { ScreensParamList, Feed } from '@/types/types';
+import { get } from '@/utils/request';
 import qs from 'qs';
 import FeedItem from './FeedItem';
 import { RouteProp, useRoute, useIsFocused } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
-import { selectUser } from 'reduxState/selectors';
+import { selectUser } from '@/reduxState/selectors';
 
 const limit = 5;
 

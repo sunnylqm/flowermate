@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
   ImageSourcePropType,
 } from 'react-native';
-import { navigate } from 'utils/navigationService';
+import { navigate } from '@/utils/navigationService';
 import { Card, Button } from 'react-native-elements';
 // @ts-ignore
 import GallerySwiper from 'react-native-gallery-swiper';
@@ -23,7 +23,7 @@ export function showDialogFactory<P>(
     if (modal) {
       return;
     }
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const element = (
         <Dialog
           {...props}

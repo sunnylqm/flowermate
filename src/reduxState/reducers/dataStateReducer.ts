@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { Action, User, Location } from 'types/types';
+import { Action, User, Location } from '@/types/types';
 
 export interface DataState {
   user?: User;

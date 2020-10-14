@@ -1,15 +1,15 @@
 import React from 'react';
-import { post } from 'utils/request';
+import { post } from '@/utils/request';
 import { Alert, Text } from 'react-native';
 import {
   showLoadingModal,
   closeLoadingModal,
   showImageResultDialog,
-} from 'components/Dialog';
-import { selectLocation } from 'reduxState/selectors';
-import { Location } from 'types/types';
-import pickImage from 'utils/pickImage';
-import { ReduxStore } from 'reduxState/store';
+} from '@/components/Dialog';
+import { selectLocation } from '@/reduxState/selectors';
+import { Location } from '@/types/types';
+import pickImage from '@/utils/pickImage';
+import { ReduxStore } from '@/reduxState/store';
 
 export function showCamera() {
   const location: Location | undefined = selectLocation(ReduxStore.getState());

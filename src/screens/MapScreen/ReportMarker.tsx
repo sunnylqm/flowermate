@@ -7,9 +7,9 @@ import {
   Platform,
 } from 'react-native';
 import { MapView } from 'react-native-amap3d';
-import { getImageUrl } from 'utils/constants';
-import { Report } from 'types/types';
-import { showImageResultDialog } from 'components/Dialog';
+import { getImageUrl } from '@/utils/constants';
+import { Report } from '@/types/types';
+import { showImageResultDialog } from '@/components/Dialog';
 import dayjs from 'dayjs';
 
 const Marker = MapView.Marker;

@@ -1,7 +1,7 @@
-import { apiEndpoint } from 'utils/constants';
-import { ReduxStore } from 'reduxState/store';
-import { selectToken } from 'reduxState/selectors';
-import actions from 'reduxState/actions';
+import { apiEndpoint } from '@/utils/constants';
+import { ReduxStore } from '@/reduxState/store';
+import { selectToken } from '@/reduxState/selectors';
+import actions from '@/reduxState/actions';
 
 interface RequestOptions extends RequestInit {
   timeout?: number;

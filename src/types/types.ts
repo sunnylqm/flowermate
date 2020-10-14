@@ -1,13 +1,13 @@
 export { Dispatch } from 'redux';
-export { Action } from 'reduxState/actions';
-import { DataState } from 'reduxState/reducers/dataStateReducer';
-import { SettingsState } from 'reduxState/reducers/settingsStateReducer';
-import { UIState } from 'reduxState/reducers/uiStateReducer';
+export { Action } from '@/reduxState/actions';
+import { DataState } from '@/reduxState/reducers/dataStateReducer';
+import { SettingsState } from '@/reduxState/reducers/settingsStateReducer';
+import { UIState } from '@/reduxState/reducers/uiStateReducer';
 export { UIState, DataState, SettingsState };
 
-import { MainStackParamList } from 'routers/MainStackNavigator';
-import { TabParamList } from 'routers/TabNavigator';
-import { AuthStackParamList } from 'routers/AuthStackNavigator';
+import { MainStackParamList } from '@/routers/MainStackNavigator';
+import { TabParamList } from '@/routers/TabNavigator';
+import { AuthStackParamList } from '@/routers/AuthStackNavigator';
 
 export type ScreensParamList = MainStackParamList &
   TabParamList &

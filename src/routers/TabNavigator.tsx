@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ProfileScreen from 'screens/ProfileScreen';
-import DiscoverScreen from 'screens/DiscoverScreen/DiscoverScreen';
-import MapScreen from 'screens/MapScreen/MapScreen';
-import HomeScreen from 'screens/HomeScreen/HomeScreen';
+import ProfileScreen from '@/screens/ProfileScreen';
+import DiscoverScreen from '@/screens/DiscoverScreen/DiscoverScreen';
+import MapScreen from '@/screens/MapScreen/MapScreen';
+import HomeScreen from '@/screens/HomeScreen/HomeScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export type TabParamList = {

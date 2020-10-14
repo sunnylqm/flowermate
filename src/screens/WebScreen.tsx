@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { ScreensParamList } from 'types/types';
+import { ScreensParamList } from '@/types/types';
 
 type WebScreenNavigationProp = StackNavigationProp<
   ScreensParamList,
@@ -34,7 +34,7 @@ export default function WebScreen({ navigation, route }: Props) {
       source={{ uri }}
       startInLoadingState={true}
       injectedJavaScript={scriptToRemoveHeader}
-      onMessage={event => {
+      onMessage={(event) => {
         navigation.setParams({ title: event.nativeEvent.data });
         // console.warn(event.nativeEvent.data);
       }}

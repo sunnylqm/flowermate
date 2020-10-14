@@ -1,16 +1,16 @@
-import actions from 'reduxState/actions';
-import React, { useState } from 'react';
-import { Alert, StyleSheet, View, SafeAreaView, Linking } from 'react-native';
+import actions from '@/reduxState/actions';
+import React from 'react';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { navigate } from 'utils/navigationService';
+import { navigate } from '@/utils/navigationService';
 import { ListItem } from 'react-native-elements';
-import { getUserAvatar } from 'utils/constants';
+import { getUserAvatar } from '@/utils/constants';
 import ActionSheet from 'react-native-action-sheet';
-import pickImage from 'utils/pickImage';
-import { showLoadingModal, closeLoadingModal } from 'components/Dialog';
-import { post, put } from 'utils/request';
-import { selectUser } from 'reduxState/selectors';
-import { User } from 'types/types';
+import pickImage from '@/utils/pickImage';
+import { showLoadingModal, closeLoadingModal } from '@/components/Dialog';
+import { post, put } from '@/utils/request';
+import { selectUser } from '@/reduxState/selectors';
+import { User } from '@/types/types';
 
 interface Props {}
 
