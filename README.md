@@ -11,6 +11,7 @@
 ```bash
 yarn
 # ios模拟器上运行
+npx pod-install
 yarn ios
 # 安卓设备上运行
 yarn android
