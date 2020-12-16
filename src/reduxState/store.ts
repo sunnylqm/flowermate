@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as reducers from '@/reduxState/reducers';
 import { combineReducers, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
