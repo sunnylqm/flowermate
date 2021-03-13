@@ -2472,6 +2472,11 @@ csstype@^3.0.2:
   resolved "https://registry.npm.taobao.org/csstype/download/csstype-3.0.7.tgz?cache=0&sync_timestamp=1614160243266&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcsstype%2Fdownload%2Fcsstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
   integrity sha1-Kl+3XhAV6E3RVpL3HomhRQKQlQs=
 
+cycle@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/cycle/download/cycle-1.0.3.tgz#21e80b2be8580f98b468f379430662b046c34ad2"
+  integrity sha1-IegLK+hYD5i0aPN5QwZisEbDStI=
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/dashdash/download/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -2488,7 +2493,7 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-dayjs@^1.8.15:
+dayjs@^1.8.15, dayjs@^1.8.29:
   version "1.10.4"
   resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.10.4.tgz#8e544a9b8683f61783f570980a8a80eaf54ab1e2"
   integrity sha1-jlRKm4aD9heD9XCYCoqA6vVKseI=
@@ -5888,6 +5893,11 @@ react-native-elements@^2.3.2:
     react-native-ratings "^7.2.0"
     react-native-status-bar-height "^2.5.0"
 
+react-native-flipper@^0.80.0:
+  version "0.80.0"
+  resolved "https://registry.npm.taobao.org/react-native-flipper/download/react-native-flipper-0.80.0.tgz#ac576ccbb5b0babf926d450d8f0689b59cff2d20"
+  integrity sha1-rFdsy7Wwur+SbUUNjwaJtZz/LSA=
+
 react-native-gallery-swiper@1.26.4:
   version "1.26.4"
   resolved "https://registry.npm.taobao.org/react-native-gallery-swiper/download/react-native-gallery-swiper-1.26.4.tgz#c9041cb36a36477865b648d9e40f2a65ec93a695"
@@ -6134,10 +6144,13 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-redux-devtools-extension@^2.13.9:
-  version "2.13.9"
-  resolved "https://registry.npm.taobao.org/redux-devtools-extension/download/redux-devtools-extension-2.13.9.tgz#6b764e8028b507adcb75a1cae790f71e6be08ae7"
-  integrity sha1-a3ZOgCi1B63LdaHK55D3Hmvgiuc=
+redux-flipper@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.npm.taobao.org/redux-flipper/download/redux-flipper-1.4.2.tgz#da765a675136e9893a002730703ec58d2f0e359b"
+  integrity sha1-2nZaZ1E26Yk6ACcwcD7FjS8ONZs=
+  dependencies:
+    cycle "^1.0.3"
+    dayjs "^1.8.29"
 
 redux-persist@^6.0.0:
   version "6.0.0"
