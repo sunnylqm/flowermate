@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   header: {
-    marginTop: 40,
+    padding: 18,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
