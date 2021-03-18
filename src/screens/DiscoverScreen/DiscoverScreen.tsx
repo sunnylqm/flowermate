@@ -6,11 +6,12 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-interface Item {
+export interface Item {
   name: string;
   cover: ImageSourcePropType;
   price: number;
@@ -18,6 +19,14 @@ interface Item {
 const data: Item[] = [
   { name: 'Brass Planter', cover: require('assets/plants/1.jpg'), price: 198 },
   { name: 'Fox Planter', cover: require('assets/plants/2.jpg'), price: 34 },
+  { name: 'Brass Planter', cover: require('assets/plants/3.jpg'), price: 198 },
+  { name: 'Fox Planter', cover: require('assets/plants/4.jpg'), price: 34 },
+  { name: 'Brass Planter', cover: require('assets/plants/5.jpg'), price: 198 },
+  { name: 'Fox Planter', cover: require('assets/plants/6.jpg'), price: 34 },
+  { name: 'Brass Planter', cover: require('assets/plants/7.jpg'), price: 198 },
+  { name: 'Fox Planter', cover: require('assets/plants/8.jpg'), price: 34 },
+  { name: 'Brass Planter', cover: require('assets/plants/9.jpg'), price: 198 },
+  { name: 'Fox Planter', cover: require('assets/plants/10.jpg'), price: 34 },
 ];
 function DiscoverScreen() {
   return (
@@ -31,7 +40,7 @@ function DiscoverScreen() {
         style={styles.list}
         data={data}
         numColumns={2}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(_item, index) => String(index)}
         renderItem={({ item }) => <Card item={item} />}
       />
     </SafeAreaView>
@@ -43,6 +52,9 @@ function Card({ item }: { item: Item }) {
       <Image style={styles.cover} source={item.cover} />
       <Text style={styles.title}>{item.name}</Text>
       <Text style={styles.price}>￥{item.price.toFixed(2)}</Text>
+      <TouchableOpacity style={styles.likeButton}>
+        <Icon style={[styles.likeIcon]} name="heart-o" />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -93,6 +105,23 @@ const styles = StyleSheet.create({
   price: {},
   list: {
     margin: 15,
+  },
+  likeButton: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: 'rgba(255, 255, 255,.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  likeIcon: {
+    color: 'grey',
+    fontSize: 12,
+    marginTop: 2,
+    marginLeft: 1,
   },
 });
 export default DiscoverScreen;
