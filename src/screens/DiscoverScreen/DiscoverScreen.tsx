@@ -1,3 +1,4 @@
+import { navigate } from '@/utils/navigationService';
 import React from 'react';
 import {
   FlatList,
@@ -48,14 +49,17 @@ function DiscoverScreen() {
 }
 function Card({ item }: { item: Item }) {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigate('ItemDetailScreen', { item })}
+    >
       <Image style={styles.cover} source={item.cover} />
       <Text style={styles.title}>{item.name}</Text>
       <Text style={styles.price}>￥{item.price.toFixed(2)}</Text>
       <TouchableOpacity style={styles.likeButton}>
         <Icon style={[styles.likeIcon]} name="heart-o" />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

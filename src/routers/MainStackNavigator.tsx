@@ -5,6 +5,8 @@ import WebScreen from '@/screens/WebScreen';
 import PostFeedScreen from '@/screens/HomeScreen/PostFeedScreen';
 import FeedListScreen from '@/screens/FeedListScreen/FeedListScreen';
 import React from 'react';
+import ItemDetailScreen from '@/screens/ItemDetailScreen';
+import { Item } from '@/screens/DiscoverScreen/DiscoverScreen';
 
 export type MainStackParamList = {
   TabNavigator: undefined;
@@ -12,6 +14,7 @@ export type MainStackParamList = {
   PostFeedScreen: undefined;
   FeedListScreen: { title: string; showMyself?: boolean };
   WebScreen: { title?: string; uri: string };
+  ItemDetailScreen: { item: Item };
 };
 
 const { Navigator, Screen } = createStackNavigator<MainStackParamList>();
@@ -60,6 +63,11 @@ export default function MainStackNavigator() {
             marginHorizontal: 80,
           },
         })}
+      />
+      <Screen
+        name="ItemDetailScreen"
+        component={ItemDetailScreen}
+        options={{ headerShown: false }}
       />
     </Navigator>
   );
