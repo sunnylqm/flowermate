@@ -21,6 +21,8 @@ yarn android
 
 项目建议结构
 
+```
+
 ├── android  
 ├── assets // 静态资源   
 ├── index.js // 入口文件  
@@ -28,21 +30,22 @@ yarn android
 ├── patches // 有时要给第三方打补丁(patch-package)  
 ├── scripts // 放一些自动化辅助脚本  
 └── src  
- ├── components // 全局复用的非全屏组件  
- ├── routers // 页面路由结构声明(stack, tab, drawer)  
- ├── screens // 全屏页面组件(可以继续嵌套 components)  
- ├── reduxState // redux 相关  
- │   ├── actions.ts  
- │   ├── reducers  
- │   ├── store.ts  
- │   └── selectors.ts  
- ├── types // 类型声明  
- ├── utils // 辅助函数、常量、配置等   
- │   ├── navService.ts   
- │   ├── constants.ts  
- │   ├── config.ts  
- │   └── request.ts  
- └── App.tsx  
+  ├── components // 全局复用的非全屏组件  
+  ├── routers // 页面路由结构声明(stack, tab, drawer)  
+  ├── screens // 全屏页面组件(可以继续嵌套 components)  
+  ├── reduxState // redux 相关  
+  │   ├── actions.ts  
+  │   ├── reducers  
+  │   ├── store.ts  
+  │   └── selectors.ts  
+  ├── types // 类型声明  
+  ├── utils // 辅助函数、常量、配置等   
+  │   ├── navService.ts   
+  │   ├── constants.ts  
+  │   ├── config.ts  
+  │   └── request.ts  
+  └── App.tsx  
+```
 
 ## 版权声明
 
