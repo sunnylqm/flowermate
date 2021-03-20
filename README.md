@@ -5,7 +5,11 @@
 [apk下载](https://github.com/sunnylqm/flowermate/releases/download/20210319/app-release.apk)
 
 
+热更新添加页面演示（master分支发现页面为空白，plant-store分支添加了一个简单的商城页面）：
+
 ![output](https://user-images.githubusercontent.com/615282/111874977-4c3aee00-89d2-11eb-82bb-8e26d08829d0.gif)
+
+
 
 
 
