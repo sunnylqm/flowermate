@@ -2,6 +2,8 @@
 
 本示例代码仅用于教学。
 
+[apk下载](https://github.com/sunnylqm/flowermate/releases/download/20210319/app-release.apk)
+
 ## 环境配置
 
 请参考 <https://reactnative.cn/docs/getting-started/>
