@@ -4,6 +4,12 @@
 
 [apk下载](https://github.com/sunnylqm/flowermate/releases/download/20210319/app-release.apk)
 
+
+![output](https://user-images.githubusercontent.com/615282/111874977-4c3aee00-89d2-11eb-82bb-8e26d08829d0.gif)
+
+
+
+
 ## 环境配置
 
 请参考 <https://reactnative.cn/docs/getting-started/>
