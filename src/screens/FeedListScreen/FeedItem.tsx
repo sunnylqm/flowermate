@@ -1,24 +1,23 @@
 import React from 'react';
-import { Feed, ReduxState, User } from '@/types/types';
+import { Feed } from '@/types/types';
 import dayjs from 'dayjs';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import ZoomImage from '@/components/ZoomImage';
 import { getImageUrl, getUserAvatar, screenWidth } from '@/utils/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { connect } from 'react-redux';
-import { selectDataState } from '@/reduxState/selectors';
 import { post } from '@/utils/request';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { selectUser } from '@/reduxState/selectors';
+import { useSelector } from 'react-redux';
 
 interface Props {
   item: Feed;
-  user: User;
 }
 
-function FeedItem({ item, user }: Props) {
+function FeedItem({ item }: Props) {
   const { images, createdAt, desc, user: author } = item;
   const fromNow = dayjs(createdAt).fromNow();
-
+  const user = useSelector(selectUser)!;
   const [feedLikes, setFeedLikes] = React.useState(
     item.feedLikes?.map(({ userId }) => userId) || [],
   );
@@ -135,10 +134,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state: ReduxState) => {
-  return {
-    user: selectDataState(state).user!,
-  };
-};
-const mapDispatchToProps = {};
-export default connect(mapStateToProps, mapDispatchToProps)(FeedItem);
+export default FeedItem;

@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { navigate } from '@/utils/navigationService';
-import { ListItem } from 'react-native-elements';
+import { Avatar, Icon, ListItem } from 'react-native-elements';
 import { getUserAvatar } from '@/utils/constants';
 import ActionSheet from 'react-native-action-sheet';
 import pickImage from '@/utils/pickImage';
@@ -60,70 +60,48 @@ function ProfileScreen({}: Props) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.avatarItem}>
-        <ListItem
-          leftAvatar={{
-            // title: user.username,
-            source: getUserAvatar(user),
-            containerStyle: {
-              width: 64,
-              height: 64,
-              borderRadius: 32,
-              overflow: 'hidden',
-            },
-          }}
-          title={user.username}
-          subtitle={user.email}
-          onPress={changeProfile}
-          chevron
-        />
+        <ListItem onPress={changeProfile}>
+          <Avatar
+            source={getUserAvatar(user)}
+            containerStyle={styles.profileAvatar}
+          />
+          <ListItem.Content>
+            <ListItem.Title>{user.username}</ListItem.Title>
+            <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
+          </ListItem.Content>
+          <ListItem.Chevron />
+        </ListItem>
       </View>
 
       <View style={styles.listGroup}>
         <ListItem
-          chevron
           bottomDivider
-          title="我的动态"
-          leftIcon={{ name: 'collections' }}
           onPress={() =>
             navigate('FeedListScreen', { title: '我的动态', showMyself: true })
           }
-        />
-        <ListItem
-          chevron
-          bottomDivider
-          title="我的鉴定"
-          leftIcon={{ name: 'collections' }}
-          onPress={() => navigate('ReportListScreen')}
-        />
+        >
+          <Icon name="collections" />
+          <ListItem.Content>
+            <ListItem.Title>我的动态</ListItem.Title>
+          </ListItem.Content>
+          <ListItem.Chevron />
+        </ListItem>
+        <ListItem bottomDivider onPress={() => navigate('ReportListScreen')}>
+          <Icon name="collections" />
+          <ListItem.Content>
+            <ListItem.Title>我的鉴定</ListItem.Title>
+          </ListItem.Content>
+          <ListItem.Chevron />
+        </ListItem>
       </View>
       <View style={styles.listGroup}>
-        {/* <ListItem
-          title="启动开课吧"
-          leftAvatar={{
-            source: require('assets/kaikeba.png'),
-            containerStyle: {
-              width: 24,
-              height: 24,
-              borderRadius: 12,
-              overflow: 'hidden',
-            },
-          }}
-          chevron
-          onPress={async () => {
-            const url = 'kaikeba://';
-            if (await Linking.canOpenURL(url)) {
-              Linking.openURL(url);
-            } else {
-              Alert.alert('你似乎还没有安装开课吧');
-            }
-          }}
-        /> */}
-        <ListItem
-          title="退出登录"
-          leftIcon={{ name: 'power-settings-new' }}
-          chevron
-          onPress={logout}
-        />
+        <ListItem bottomDivider onPress={logout}>
+          <Icon name="power-settings-new" />
+          <ListItem.Content>
+            <ListItem.Title>退出登录</ListItem.Title>
+          </ListItem.Content>
+          <ListItem.Chevron />
+        </ListItem>
       </View>
     </SafeAreaView>
   );
@@ -139,6 +117,12 @@ const styles = StyleSheet.create({
   avatarItem: {
     marginTop: 40,
     marginBottom: 30,
+  },
+  profileAvatar: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    overflow: 'hidden',
   },
 });
 export default ProfileScreen;
