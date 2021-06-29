@@ -7,8 +7,8 @@ export { screenHeight, screenWidth };
 
 // export const host = __DEV__
 //   ? 'http://localhost:9999'
-//   : 'http://118.24.22.67:9999';
-export const host = 'http://118.24.22.67:9999';
+//   : 'http://example.reactnative.cn:9999';
+export const host = 'http://example.reactnative.cn:9999';
 export const apiEndpoint = `${host}/api`;
 
 export const getImageUrl = (imageId: number) =>
