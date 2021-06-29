@@ -2,7 +2,6 @@
 
 本示例代码仅用于教学。
 
-[apk下载](https://github.com/sunnylqm/flowermate/releases/download/20210319/app-release.apk)
 
 
 热更新添加页面演示（master分支发现页面为空白，plant-store分支添加了一个简单的商城页面）：
