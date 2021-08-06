@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Alert, StyleSheet, View, Text, Image, TextInput } from 'react-native';
+import { Alert, StyleSheet, View, Text, TextInput } from 'react-native';
 import { ScreensParamList } from '@/types/types';
 import { post } from '@/utils/request';
 import UploadButton from '@/components/UploadButton';
 import ZoomImage from '@/components/ZoomImage';
 import { showLoadingModal, closeLoadingModal } from '@/components/Dialog';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 
-type WebScreenNavigationProp = StackNavigationProp<
+type WebScreenNavigationProp = NativeStackNavigationProp<
   ScreensParamList,
   'PostFeedScreen'
 >;

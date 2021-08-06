@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { RouteProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { ScreensParamList } from '@/types/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-type WebScreenNavigationProp = StackNavigationProp<
+type WebScreenNavigationProp = NativeStackNavigationProp<
   ScreensParamList,
   'WebScreen'
 >;

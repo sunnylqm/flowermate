@@ -19,6 +19,7 @@ function TabNavigator() {
   return (
     <Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarIcon: ({ color, size }) => {
           const routeName = route.name;
           let iconName = '';
@@ -38,7 +39,9 @@ function TabNavigator() {
       <Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ tabBarLabel: '首页' }}
+        options={{
+          tabBarLabel: '首页',
+        }}
       />
       <Screen
         name="MapScreen"

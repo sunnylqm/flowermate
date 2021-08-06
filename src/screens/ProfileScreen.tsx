@@ -1,6 +1,6 @@
 import actions from '@/reduxState/actions';
 import React from 'react';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { navigate } from '@/utils/navigationService';
 import { Avatar, Icon, ListItem } from 'react-native-elements';
@@ -11,19 +11,19 @@ import { showLoadingModal, closeLoadingModal } from '@/components/Dialog';
 import { post, put } from '@/utils/request';
 import { selectUser } from '@/reduxState/selectors';
 import { User } from '@/types/types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-interface Props {}
-
-function ProfileScreen({}: Props) {
+function ProfileScreen() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser)!;
   const setUser = React.useCallback(
     (user: User) => dispatch(actions.setUser(user)),
     [dispatch],
   );
-  const logout = React.useCallback(() => dispatch(actions.logout()), [
-    dispatch,
-  ]);
+  const logout = React.useCallback(
+    () => dispatch(actions.logout()),
+    [dispatch],
+  );
   function changeProfile() {
     ActionSheet.showActionSheetWithOptions(
       {
@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
     marginVertical: 6,
   },
   avatarItem: {
-    marginTop: 40,
     marginBottom: 30,
   },
   profileAvatar: {

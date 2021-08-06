@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '@/screens/LoginScreen';
 import RegisterScreen from '@/screens/RegisterScreen';
 import React from 'react';
@@ -8,7 +8,7 @@ export type AuthStackParamList = {
   RegisterScreen: undefined;
 };
 
-const { Navigator, Screen } = createStackNavigator<AuthStackParamList>();
+const { Navigator, Screen } = createNativeStackNavigator<AuthStackParamList>();
 
 export default function AuthStackNavigator() {
   return (

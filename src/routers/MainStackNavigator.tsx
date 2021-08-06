@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import ReportListScreen from '@/screens/ReportListScreen/ReportListScreen';
 import WebScreen from '@/screens/WebScreen';
@@ -14,7 +14,7 @@ export type MainStackParamList = {
   WebScreen: { title?: string; uri: string };
 };
 
-const { Navigator, Screen } = createStackNavigator<MainStackParamList>();
+const { Navigator, Screen } = createNativeStackNavigator<MainStackParamList>();
 
 export default function MainStackNavigator() {
   return (

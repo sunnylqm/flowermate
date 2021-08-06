@@ -1,12 +1,8 @@
-import 'react-native-gesture-handler';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 dayjs.locale('zh-cn');
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
-
-import { enableScreens } from 'react-native-screens';
-enableScreens();
 
 import { setSiblingWrapper } from 'react-native-root-siblings';
 import { Provider } from 'react-redux';

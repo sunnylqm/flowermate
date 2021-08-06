@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FeedListScreen from '@/screens/FeedListScreen/FeedListScreen';
 import { navigate } from '@/utils/navigationService';
-interface Props {}
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-function HomeScreen({}: Props) {
+function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -33,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   header: {
-    marginTop: 40,
+    marginTop: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Feed } from '@/types/types';
 import dayjs from 'dayjs';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import ZoomImage from '@/components/ZoomImage';
 import { getImageUrl, getUserAvatar, screenWidth } from '@/utils/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { post } from '@/utils/request';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { selectUser } from '@/reduxState/selectors';
 import { useSelector } from 'react-redux';
 
