@@ -14,30 +14,13 @@ interface Props {
   navigation: WebScreenNavigationProp;
   route: WebScreenRouteProp;
 }
-
-const scriptToRemoveHeader = `
-var headEl = document.querySelector('.rt-head');
-var bodyEl = document.querySelector('.rt-body');
-if (headEl && bodyEl) {
-  var title = document.querySelector('.vf-title').textContent;
-  window.ReactNativeWebView.postMessage(title);
-  headEl.remove();
-  bodyEl.style.paddingTop = 0;
-}
-`;
-
-export default function WebScreen({ navigation, route }: Props) {
+export default function WebScreen({ route }: Props) {
   const uri = route.params.uri.replace('http:', 'https:');
   return (
     <WebView
       style={styles.container}
       source={{ uri }}
       startInLoadingState={true}
-      injectedJavaScript={scriptToRemoveHeader}
-      onMessage={(event) => {
-        navigation.setParams({ title: event.nativeEvent.data });
-        // console.warn(event.nativeEvent.data);
-      }}
     />
   );
 }

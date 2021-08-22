@@ -41,9 +41,8 @@ export function showDialogFactory<P>(
   };
 }
 
-export const showImageResultDialog = showDialogFactory<ImageResultDialogProps>(
-  ImageResultDialog,
-);
+export const showImageResultDialog =
+  showDialogFactory<ImageResultDialogProps>(ImageResultDialog);
 interface ImageResultDialogProps {
   name: string;
   imageUri: ImageSourcePropType;
@@ -59,14 +58,16 @@ function ImageResultDialog({
 }: ImageResultDialogProps & DialogProps) {
   return (
     <View style={styles.fullScreenModal}>
-      <Card title={name} image={imageUri} containerStyle={{ width: '80%' }}>
+      <Card containerStyle={{ width: '80%' }}>
+        <Card.Title>{name}</Card.Title>
+        <Card.Image source={imageUri} style={{ marginBottom: 10 }} />
         {webUri ? (
           <>
             {content}
             <Button
               onPress={() => {
                 onClose();
-                return navigate('WebScreen', { uri: webUri });
+                return navigate('WebScreen', { uri: webUri, title: name });
               }}
               title="查看网页百科"
               containerStyle={{ marginBottom: 10 }}

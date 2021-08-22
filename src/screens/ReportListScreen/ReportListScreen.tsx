@@ -72,11 +72,11 @@ function ReportListScreen({}: Props) {
               onPress={() => {
                 const uri = extra?.baike_info?.baike_url;
                 if (uri) {
-                  navigate('WebScreen', { uri });
+                  navigate('WebScreen', { uri, title: extra?.name });
                 }
               }}
             >
-              {extra!.name}
+              {extra?.name}
             </Text>
           </View>
         </View>
