@@ -3,6 +3,8 @@
 本示例代码仅用于教学。
 
 
+配套用服务端代码见 <https://github.com/sunnylqm/flowermate-server>
+
 
 
 ## 环境配置
