@@ -24,23 +24,14 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = flowermate/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = flowermate/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = flowermate/main.m; sourceTree = "<group>"; };
-		14910AA4F56D0B21CD7FE247 /* Pods-flowermateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermateTests.release.xcconfig"; path = "Target Support Files/Pods-flowermateTests/Pods-flowermateTests.release.xcconfig"; sourceTree = "<group>"; };
-		1750977165BD1F1DF6033654 /* Pods-flowermateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermateTests.debug.xcconfig"; path = "Target Support Files/Pods-flowermateTests/Pods-flowermateTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D6B605BEB9500DA00E8E133 /* libPods-flowermate-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flowermate-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86D33225C4A1085BD03F2463 /* Pods-flowermate-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-flowermate-tvOS/Pods-flowermate-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		90539CA1321720E0DE33DC61 /* Pods-flowermate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate.release.xcconfig"; path = "Target Support Files/Pods-flowermate/Pods-flowermate.release.xcconfig"; sourceTree = "<group>"; };
-		A3C418D98210B1B58207066D /* libPods-flowermate-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flowermate-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAA14AE56051A3AE193ABCF1 /* Pods-flowermate-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-flowermate-tvOSTests/Pods-flowermate-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B86562C734789D0782F7BF19 /* Pods-flowermate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate.debug.xcconfig"; path = "Target Support Files/Pods-flowermate/Pods-flowermate.debug.xcconfig"; sourceTree = "<group>"; };
-		C51C668215B49AC9593EC07A /* Pods-flowermate-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-flowermate-tvOSTests/Pods-flowermate-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		D7340BD523FCABF16101B1D0 /* Pods-flowermate-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate-tvOS.release.xcconfig"; path = "Target Support Files/Pods-flowermate-tvOS/Pods-flowermate-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		E857814BE6934F4DC1572D53 /* libPods-flowermate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flowermate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F1610B5C2470EA1900079771 /* flowermate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flowermate-Bridging-Header.h"; sourceTree = "<group>"; };
 		F1610B5D2470EA1900079771 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		F1C408FE23E075F200148FC1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		F3E2D82895E01969A07E6DD1 /* libPods-flowermateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flowermateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +68,6 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				E857814BE6934F4DC1572D53 /* libPods-flowermate.a */,
-				5D6B605BEB9500DA00E8E133 /* libPods-flowermate-tvOS.a */,
-				A3C418D98210B1B58207066D /* libPods-flowermate-tvOSTests.a */,
-				F3E2D82895E01969A07E6DD1 /* libPods-flowermateTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,12 +77,6 @@
 			children = (
 				B86562C734789D0782F7BF19 /* Pods-flowermate.debug.xcconfig */,
 				90539CA1321720E0DE33DC61 /* Pods-flowermate.release.xcconfig */,
-				86D33225C4A1085BD03F2463 /* Pods-flowermate-tvOS.debug.xcconfig */,
-				D7340BD523FCABF16101B1D0 /* Pods-flowermate-tvOS.release.xcconfig */,
-				AAA14AE56051A3AE193ABCF1 /* Pods-flowermate-tvOSTests.debug.xcconfig */,
-				C51C668215B49AC9593EC07A /* Pods-flowermate-tvOSTests.release.xcconfig */,
-				1750977165BD1F1DF6033654 /* Pods-flowermateTests.debug.xcconfig */,
-				14910AA4F56D0B21CD7FE247 /* Pods-flowermateTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -279,7 +261,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-flowermate/Pods-flowermate-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

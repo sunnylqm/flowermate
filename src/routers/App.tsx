@@ -5,9 +5,9 @@ import { ReduxStore, persistor } from '@/reduxState/store';
 import RootScreen from './RootScreen';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { RootSiblingParent } from 'react-native-root-siblings';
-import checkPushyUpdate from '@/utils/checkPushyUpdate';
+import { simpleUpdate } from 'react-native-update';
 
-export default function App() {
+function App() {
   const [permissionsGranted, setPermissionsGranted] = React.useState(false);
 
   React.useEffect(() => {
@@ -32,7 +32,6 @@ export default function App() {
       }
     }
     checkPermissions();
-    checkPushyUpdate();
   }, []);
 
   if (!permissionsGranted) {
@@ -49,3 +48,5 @@ export default function App() {
     </Provider>
   );
 }
+
+export default simpleUpdate(App);
