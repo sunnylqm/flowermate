@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		437E2EB0C0D2BE68EE0D72E1 /* libPods-flowermate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E857814BE6934F4DC1572D53 /* libPods-flowermate.a */; };
+		A39548342840B0F5006E0F8D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A39548332840B0F5006E0F8D /* AppDelegate.mm */; };
 		F1610B5E2470EA1900079771 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1610B5D2470EA1900079771 /* dummy.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = flowermate/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = flowermate/main.m; sourceTree = "<group>"; };
 		90539CA1321720E0DE33DC61 /* Pods-flowermate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate.release.xcconfig"; path = "Target Support Files/Pods-flowermate/Pods-flowermate.release.xcconfig"; sourceTree = "<group>"; };
+		A39548332840B0F5006E0F8D /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = flowermate/AppDelegate.mm; sourceTree = "<group>"; };
 		B86562C734789D0782F7BF19 /* Pods-flowermate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flowermate.debug.xcconfig"; path = "Target Support Files/Pods-flowermate/Pods-flowermate.debug.xcconfig"; sourceTree = "<group>"; };
 		E857814BE6934F4DC1572D53 /* libPods-flowermate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flowermate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -51,6 +53,7 @@
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				A39548332840B0F5006E0F8D /* AppDelegate.mm */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -261,10 +264,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-flowermate/Pods-flowermate-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +327,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				F1610B5E2470EA1900079771 /* dummy.swift in Sources */,
+				A39548342840B0F5006E0F8D /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

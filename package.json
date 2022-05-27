@@ -23,7 +23,7 @@
     "postinstall-postinstall": "^2.1.0",
     "qs": "^6.10.3",
     "react": "17.0.2",
-    "react-native": "0.67.4",
+    "react-native": "0.68.2",
     "react-native-action-sheet": "^2.2.0",
     "react-native-amap3d": "^3.0.7",
     "react-native-elements": "^3.4.2",
