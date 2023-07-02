@@ -4,6 +4,10 @@ dayjs.locale('zh-cn');
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
+// https://github.com/software-mansion/react-native-screens#experimental-support-for-react-freeze
+import { enableFreeze } from 'react-native-screens';
+enableFreeze(true);
+
 import { setSiblingWrapper } from 'react-native-root-siblings';
 import { Provider } from 'react-redux';
 import { ReduxStore } from '@/reduxState/store';

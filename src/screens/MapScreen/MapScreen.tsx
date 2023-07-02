@@ -4,13 +4,15 @@ import { useDispatch } from 'react-redux';
 import { MapLocation, Report } from '@/types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { get } from '@/utils/request';
-import { MapView } from 'react-native-amap3d';
+import { MapView, AMapSdk } from 'react-native-amap3d';
 import actions from '@/reduxState/actions';
 import qs from 'qs';
 import ReportMarker from './ReportMarker';
 import { screenWidth } from '@/utils/constants';
 import { useIsFocused } from '@react-navigation/native';
 import { showCamera } from '@/utils/showCamera';
+
+AMapSdk.init('33ae810235a568212ed515deebf34da5');
 
 interface ReportsMap {
   [id: string]: Report;

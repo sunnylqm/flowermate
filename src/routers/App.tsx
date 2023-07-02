@@ -6,6 +6,9 @@ import RootScreen from './RootScreen';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import { simpleUpdate } from 'react-native-update';
+import _updateConfig from '../../update.json';
+// @ts-expect-error
+const { appKey } = _updateConfig[Platform.OS];
 
 function App() {
   const [permissionsGranted, setPermissionsGranted] = React.useState(false);
@@ -49,4 +52,4 @@ function App() {
   );
 }
 
-export default simpleUpdate(App);
+export default simpleUpdate(App, { appKey });

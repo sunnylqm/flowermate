@@ -4,7 +4,6 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"
-#import <AMapFoundationKit/AMapFoundationKit.h>
 #import "RCTPushy.h"
 
 #import <React/RCTAppSetupUtils.h>
@@ -33,7 +32,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   RCTAppSetupPrepareApp(application);
-  [AMapServices sharedServices].apiKey = @"33ae810235a568212ed515deebf34da5";
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
 
